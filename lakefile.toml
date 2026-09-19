@@ -1,0 +1,10 @@
+name = "Multi"
+version = "0.1.0"
+defaultTargets = ["multi"]
+
+[[lean_lib]]
+name = "Multi"
+
+[[lean_exe]]
+name = "multi"
+root = "Main"
