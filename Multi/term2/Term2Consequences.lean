@@ -1,4 +1,4 @@
-import Multi.Term2Syntax
+import Multi.term2.Term2Syntax
 
 def T.OT := { s : T // T.isOT s }
 
@@ -57,4 +57,3 @@ theorem T.OT_wellFounded_of_NF_wellFounded
     WellFounded fun x y : T.OT => x.1 < y.1 := by
   let toNF : T.OT → T.NF := fun x => ⟨x.1, ((T.OT_is_NF_of_wellFounded hwf x.1).mp x.2).1⟩
   exact InvImage.wf toNF hwf
-

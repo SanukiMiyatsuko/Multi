@@ -1,4 +1,4 @@
-import Multi.Constructive.Term2Inverse
+import Multi.term2.Constructive.Term2Inverse
 
 namespace T.Constructive
 

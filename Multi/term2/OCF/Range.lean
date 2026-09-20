@@ -1,4 +1,4 @@
-import Multi.OCF.Ordinal
+import Multi.term2.OCF.Ordinal
 
 namespace OCF.Ordinal
 

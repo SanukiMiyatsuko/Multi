@@ -1,4 +1,4 @@
-import Multi.Term3Syntax
+import Multi.term3.Term3Syntax
 
 open T
 

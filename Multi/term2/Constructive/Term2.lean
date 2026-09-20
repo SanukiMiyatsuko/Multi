@@ -1,5 +1,5 @@
-import Multi.Term2Consequences
-import Multi.Constructive.Term2Closure
+import Multi.term2.Term2Consequences
+import Multi.term2.Constructive.Term2Closure
 
 namespace T.Constructive
 

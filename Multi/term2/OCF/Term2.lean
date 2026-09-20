@@ -1,5 +1,5 @@
-import Multi.Term2Consequences
-import Multi.OCF.Term2Interpretation
+import Multi.term2.Term2Consequences
+import Multi.term2.OCF.Term2Interpretation
 
 namespace T.OCF
 

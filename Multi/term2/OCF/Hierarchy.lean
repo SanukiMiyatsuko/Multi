@@ -1,5 +1,5 @@
-import Multi.OCF.Collapse
-import Multi.OCF.Principal
+import Multi.term2.OCF.Collapse
+import Multi.term2.OCF.Principal
 
 namespace OCF.Collapse
 

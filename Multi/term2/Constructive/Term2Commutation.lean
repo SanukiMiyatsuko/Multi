@@ -1,4 +1,4 @@
-import Multi.Constructive.Term2Anchors
+import Multi.term2.Constructive.Term2Anchors
 
 namespace T.Constructive
 

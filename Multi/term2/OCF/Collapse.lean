@@ -1,5 +1,5 @@
-import Multi.OCF.Hartogs
-import Multi.OCF.Arithmetic
+import Multi.term2.OCF.Hartogs
+import Multi.term2.OCF.Arithmetic
 
 namespace OCF
 

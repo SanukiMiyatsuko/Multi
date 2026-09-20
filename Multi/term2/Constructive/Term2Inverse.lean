@@ -1,4 +1,4 @@
-import Multi.Constructive.Term2Commutation
+import Multi.term2.Constructive.Term2Commutation
 
 namespace T.Constructive
 

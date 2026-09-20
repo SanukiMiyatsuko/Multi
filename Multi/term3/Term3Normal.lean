@@ -1,4 +1,4 @@
-import Multi.Constructive.Term3Fundamental
+import Multi.term3.Term3Fundamental
 
 open T
 

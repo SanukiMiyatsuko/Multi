@@ -1,4 +1,4 @@
-import Multi.OCF.Range
+import Multi.term2.OCF.Range
 
 namespace OCF.Ordinal
 

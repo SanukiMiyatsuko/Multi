@@ -1,4 +1,4 @@
-import Multi.Constructive.Term2Brackets
+import Multi.term2.Constructive.Term2Brackets
 
 namespace T.Constructive
 

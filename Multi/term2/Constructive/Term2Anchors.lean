@@ -1,4 +1,4 @@
-import Multi.Constructive.Term2Stages
+import Multi.term2.Constructive.Term2Stages
 
 namespace T.Constructive
 

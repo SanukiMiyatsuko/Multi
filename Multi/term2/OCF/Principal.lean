@@ -1,4 +1,4 @@
-import Multi.OCF.Arithmetic
+import Multi.term2.OCF.Arithmetic
 
 namespace OCF.Ordinal
 

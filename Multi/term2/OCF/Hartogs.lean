@@ -1,4 +1,4 @@
-import Multi.OCF.Supremum
+import Multi.term2.OCF.Supremum
 
 namespace OCF
 

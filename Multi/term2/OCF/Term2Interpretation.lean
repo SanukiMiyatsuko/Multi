@@ -1,5 +1,5 @@
-import Multi.Term2Syntax
-import Multi.OCF.Hierarchy
+import Multi.term2.Term2Syntax
+import Multi.term2.OCF.Hierarchy
 
 /- Optional classical interpretation, independent of the constructive proof in Multi.term2. -/
 namespace T
@@ -149,4 +149,3 @@ theorem denote_strict (s t : T) (hs : isNF s) (hst : s < t) : denote s < denote 
   (interpretation_properties s hs).1 t hst
 
 end T
-

@@ -1,4 +1,4 @@
-import Multi.Constructive.Term2Universal
+import Multi.term2.Constructive.Term2Universal
 
 namespace T.Constructive
 

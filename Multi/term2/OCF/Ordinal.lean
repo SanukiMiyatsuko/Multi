@@ -1,4 +1,4 @@
-import Multi.OCF.WellOrder
+import Multi.term2.OCF.WellOrder
 
 namespace OCF
 

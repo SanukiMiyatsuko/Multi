@@ -1,5 +1,5 @@
-import Multi.Term2Syntax
-import Multi.Constructive.Stages
+import Multi.term2.Term2Syntax
+import Multi.Stages
 
 namespace T.Constructive
 
