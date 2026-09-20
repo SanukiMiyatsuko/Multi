@@ -3019,7 +3019,8 @@ theorem T.fund_ofNat_isNF (s : T) (hs : T.isNF s) (n : Nat) :
     · exact T.fund_nonzero_tail_isNF a b c (T.ofNat n) hs hcZ ih2 (T.ofNat_in_domain c n)
 
 
-theorem T.OT_characterization_of_fundamental_properties
+theorem T.OT_characterization_of_wellFounded_and_fundamental_properties
+    (hwf : WellFounded fun x y : T.NF => x.1 < y.1)
     (hclosed : ∀ s, T.isNF s → s < P (P Z Z Z) Z Z →
       ∀ n, T.isNF (T.fund s (T.ofNat n)))
     (s : T) :
@@ -3038,7 +3039,7 @@ theorem T.OT_characterization_of_fundamental_properties
     have downward : ∀ x : T.NF, T.isOT x.1 → x.1 < P (P Z Z Z) Z Z →
         ∀ r, T.isNF r → r ≤ x.1 → T.isOT r := by
       intro x
-      induction x using T.NF_is_wellfounded.induction with
+      induction x using hwf.induction with
       | h x ih =>
         intro hx hxbound r hr hrx
         cases hrx with
@@ -3061,12 +3062,31 @@ theorem T.OT_characterization_of_fundamental_properties
       exact downward ⟨P Z (T.LF n) Z, T.base_isNF n⟩ (T.isOT.base n)
         (T.base_lt_omega_one n) s hs.1 (Or.inl hn)
 
-theorem T.OT_is_NF (s : T) : T.isOT s ↔ T.isNF s ∧ s < P (P Z Z Z) Z Z := by
-  exact T.OT_characterization_of_fundamental_properties
+theorem T.OT_characterization_of_fundamental_properties
+    (hclosed : ∀ s, T.isNF s → s < P (P Z Z Z) Z Z →
+      ∀ n, T.isNF (T.fund s (T.ofNat n)))
+    (s : T) :
+    T.isOT s ↔ T.isNF s ∧ s < P (P Z Z Z) Z Z :=
+  T.OT_characterization_of_wellFounded_and_fundamental_properties
+    T.NF_is_wellfounded hclosed s
+
+/-- A constructive proof of well-foundedness suffices for the characterization. -/
+theorem T.OT_is_NF_of_wellFounded
+    (hwf : WellFounded fun x y : T.NF => x.1 < y.1)
+    (s : T) : T.isOT s ↔ T.isNF s ∧ s < P (P Z Z Z) Z Z := by
+  exact T.OT_characterization_of_wellFounded_and_fundamental_properties hwf
     (fun t ht _ n => T.fund_ofNat_isNF t ht n) s
+
+theorem T.OT_is_NF (s : T) : T.isOT s ↔ T.isNF s ∧ s < P (P Z Z Z) Z Z :=
+  T.OT_is_NF_of_wellFounded T.NF_is_wellfounded s
 
 def T.OT := { s : T // T.isOT s }
 
-theorem T.OT_is_wellfounded : WellFounded fun x y : T.OT => x.1 < y.1 := by
-  let toNF : T.OT → T.NF := fun x => ⟨x.1, ((T.OT_is_NF x.1).mp x.2).1⟩
-  exact InvImage.wf toNF T.NF_is_wellfounded
+theorem T.OT_wellFounded_of_NF_wellFounded
+    (hwf : WellFounded fun x y : T.NF => x.1 < y.1) :
+    WellFounded fun x y : T.OT => x.1 < y.1 := by
+  let toNF : T.OT → T.NF := fun x => ⟨x.1, ((T.OT_is_NF_of_wellFounded hwf x.1).mp x.2).1⟩
+  exact InvImage.wf toNF hwf
+
+theorem T.OT_is_wellfounded : WellFounded fun x y : T.OT => x.1 < y.1 :=
+  T.OT_wellFounded_of_NF_wellFounded T.NF_is_wellfounded
