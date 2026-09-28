@@ -3,7 +3,7 @@ import Multi
 import Multi.term2.Constructive.Term2
 
 /-! Audit every definition and theorem in the project, including generated proofs.
-Run `lake build Subsp Subsp.new.stop`, then `lake env lean ProofAudit.lean`.
+Run `lake build Multi Multi.term2.Constructive.Term2`, then `lake env lean ProofAudit2.lean`.
 -/
 
 open Lean Elab Command in
