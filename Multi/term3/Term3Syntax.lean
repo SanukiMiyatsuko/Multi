@@ -493,4 +493,3 @@ inductive T.isOT : T → Prop where
 | step (s : T) (hs : T.isOT s) (n : Nat) : T.isOT (T.fund s (T.ofNat n))
 
 def T.OT := { s : T // T.isOT s }
-

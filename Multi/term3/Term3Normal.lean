@@ -10,8 +10,10 @@ def T.head : T → T
 the lower collapsing level and is not unfolded here. -/
 def T.G₁ (u : T) : T → List T
   | Z => []
-  | P a b _ d =>
-    if u ≤ a then [b] ++ T.G₁ u a ++ T.G₁ u b ++ T.G₁ u d else T.G₁ u d
+  | P a b c d =>
+    if u ≤ a then
+      [b] ++ T.G₁ u a ++ T.G₁ u b ++ T.G₁ u c ++ T.G₁ u d
+    else T.G₁ u d
 
 /-- Support for the second collapsing level. -/
 def T.G₂ (u v : T) : T → List T
@@ -48,7 +50,7 @@ theorem T.isNF_index (a : T) (ha : T.isNF a) : T.isNF (P a Z Z Z) := by
   · exact T.Z_le _
 
 theorem T.G₁_P_of_le (u a b c d : T) (h : u ≤ a) :
-    T.G₁ u (P a b c d) = [b] ++ T.G₁ u a ++ T.G₁ u b ++ T.G₁ u d := by
+    T.G₁ u (P a b c d) = [b] ++ T.G₁ u a ++ T.G₁ u b ++ T.G₁ u c ++ T.G₁ u d := by
   rw [T.G₁, ite_eq_left h]
 
 theorem T.G₁_P_of_not_le (u a b c d : T) (h : ¬ u ≤ a) :
@@ -78,17 +80,22 @@ theorem T.mem_G₁_properties (u s x : T) (hs : T.isNF s) (hx : x ∈ T.G₁ u s
       | inl hx =>
         cases List.mem_append.mp hx with
         | inr hx =>
-          have hp := ih1 hx
-          exact ⟨hp.1, Nat.lt_trans hp.2 (T.size_lt_size_P_second _ _ _ _)⟩
+          have hp := ih2 hx
+          exact ⟨hp.1, Nat.lt_trans hp.2 (T.size_lt_size_P_third _ _ _ _)⟩
         | inl hx =>
           cases List.mem_append.mp hx with
           | inr hx =>
-            have hp := ih0 hx
-            exact ⟨hp.1, Nat.lt_trans hp.2 (T.size_lt_size_P_first _ _ _ _)⟩
+            have hp := ih1 hx
+            exact ⟨hp.1, Nat.lt_trans hp.2 (T.size_lt_size_P_second _ _ _ _)⟩
           | inl hx =>
-            have heq := List.mem_singleton.mp hx
-            cases heq
-            exact ⟨hb, T.size_lt_size_P_second _ _ _ _⟩
+            cases List.mem_append.mp hx with
+            | inr hx =>
+              have hp := ih0 hx
+              exact ⟨hp.1, Nat.lt_trans hp.2 (T.size_lt_size_P_first _ _ _ _)⟩
+            | inl hx =>
+              have heq := List.mem_singleton.mp hx
+              cases heq
+              exact ⟨hb, T.size_lt_size_P_second _ _ _ _⟩
     · rw [T.G₁_P_of_not_le u a b c d hua] at hx
       have hp := ih3 hx
       exact ⟨hp.1, Nat.lt_trans hp.2 (T.size_lt_size_P_fourth _ _ _ _)⟩
