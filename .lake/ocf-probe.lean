@@ -1,9 +1,0 @@
-import Multi.OCF.WellOrder
-#check @Quotient.liftOn₂
-#check @Quotient.inductionOn
-#check @Quotient.inductionOn₂
-#check @Quotient.inductionOn₃
-#check @Quotient.mk
-#check @Quotient.sound
-#check @Quotient.exact
-#check @Setoid.mk
