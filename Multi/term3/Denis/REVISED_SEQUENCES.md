@@ -182,9 +182,12 @@ psi (I q (succ (psi λ t))) a = psi λ a
 - `successor_rank_small_presentation`：a<I(0,0) かつ ψκb=ψλa（κ は正則添字）なら κ≤λ かつ b=a。
 - `C_successor_rank_small_parameters`：同じ a について ψλa の C 所属から r,a の所属を導く。
 
+`successor_rank_below_presentation` と `C_successor_rank_below_parameters` は、
+これを a<λ かつ a∈C(a,ψλa) という条件に一般化する。a は非可算でもよい。
+
 これらは表示された κ が C に属すという誤った仮定を使わない。
 `CollapseTrees.lean` の `CollapseTree` は、既存の `IndexTree` に加え、
-この ψλa を rank の中にも再帰的に使える族を記述する。
+この ψλa を rank の中にも、λ 未満の正規な引数の中にも再帰的に使える族を記述する。
 `revised_collapseTree_diagonal_normalFundamentalSequence` は対角崩壊 ψΩt の修正列が
 正規形を保存する実順序数の基本列であることを、
 `collapseTree_diagonal_cofinality` はその共終数が ω であることを証明する。
@@ -211,6 +214,43 @@ supₙ bₙ = psi λ (succ a)
 既知の順序数長の正規基本列を ψλ に移す。引数の基本列の存在そのものは前提である。
 一方 `revised_successor_rank_bounded_argument_fundamentalSequence` は、
 a が最初の対角崩壊以下の正規項である区間全体を、密度の未証明の前提なしで扱う。
+
+## 極限 rank の零引数・後続引数
+
+`LimitRankSequences.lean` は、r が極限かつ RankBounded、λ=I(r,0) の場合、
+
+```
+psi λ 0 = sup_{q<r} I(q,0)
+psi λ (succ a) = sup_{q<r} I(q,succ(psi λ a))
+```
+
+を証明する。後者は a∈C(a,ψλa) を前提とし、a の可算性を要求しない。
+r の正規基本列 f を用いれば、それぞれ I(f(i),0)、I(f(i),succ(ψλa)) が
+実順序数の共終な基本列になり、正規添字での出力も正規形になる。
+最小長の列を引き継ぐ場合は、親の共終数が r の共終数と等しいことも従う。
+
+具体的に Ω=I(0,0) とすると、`uncountable_rank_zero_normalFundamentalSequence` は
+ψ(I(Ω,0),0) に対する Ω 長の基本列 i↦I(i,0) を与える。
+`uncountable_rank_zero_cofinality` はその共終数が Ω と等しいことを証明する。
+`not_dense_uncountable_rank_zero` により、この値を自然数添字の修正列で共終に
+近似することはできない。正規値全体への有限展開の到達性とは区別する。
+
+## 証明済みの枝の統合
+
+`SequenceAssembly.lean` の `SequenceTerm` は、加法・I・証明済みの ψ の枝を
+繰り返し組み合わせる。I(r,0) の崩壊では r が零・後続・極限のすべてを扱い、
+引数も零・後続・添字未満の正規な極限を扱う。既知の対角枝と値の等しい
+別表現も含む。固定される rank や加法の左辺には必要な正規性だけを要求する。
+
+`SequenceTerm.minimal_normal_sequence` は、この族の任意の極限項について、
+実際の共終数を添字長とする正規基本列の存在と、添字長の正規表現を証明する。
+`minimalSequence` は証明された列を選ぶ順序数関数であり、`minimalStepTerm` は
+その正規添字に対応する正規項を選ぶ。正規性・値の一致・親より小さいこと・
+狭義増加をそれぞれ証明する。順序数全体での共終性は `minimalSequence_spec` が与える。
+自然数長の場合、`SequenceTerm.revised_fundamentalSequence` が従来の修正展開へ戻す。
+
+未処理の ψ の枝を仮定として済ませたり、`IsNormal` の定義をこの族に縮小したりしていない。
+一般の I(r,succ b) の崩壊添字や、添字以上の極限引数などが残る。
 
 任意の正規な親について `NormalFundamentalSequence` を構成する定理は未完了である。
 この仕様の導入や任意順序数の `intrinsicSequence_spec` を、その正規形保存の証明と
