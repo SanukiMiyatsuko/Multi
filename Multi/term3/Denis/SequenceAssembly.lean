@@ -202,6 +202,22 @@ theorem SequenceTerm.of_nested_collapse {s : OCF.Denis.Supply} {q r b t a : Term
   have h := nestedCollapse_replacement_normal s q r b t a hn hqr hat
   exact .equalValue hseq hn h.2
 
+/-- A concrete successor-parameter branch: if the inner collapse has a
+first-index presentation already covered by `SequenceTerm`, then wrapping
+that index into `I(q, succ (psi ...))` preserves membership in the assembled
+family. This is a genuine subfamily of the still-open general
+`I(r, succ b)` collapse-index case. -/
+theorem SequenceTerm.of_nested_firstIndex {s : OCF.Denis.Supply} {q r t a : Term}
+    (hr : SequenceTerm s r) (ha : SequenceTerm s a)
+    (hn : IsNormal s (nestedCollapse q r .zero t a))
+    (hqr : denote s q < denote s r) (hat : denote s a ≤ denote s t)
+    (hbound : OCF.Denis.IsLimit (denote s a) →
+      denote s a < OCF.Denis.I s (denote s r) 0) :
+    SequenceTerm s (nestedCollapse q r .zero t a) := by
+  have hrep := nestedCollapse_replacement_normal s q r .zero t a hn hqr hat
+  apply SequenceTerm.of_nested_collapse hn hqr hat
+  exact .firstIndex hr ha hrep.1 rfl hbound
+
 theorem SequenceTerm.hasNormalSequence {s : OCF.Denis.Supply} {t : Term} (ht : SequenceTerm s t) :
     HasNormalSequence s (denote s t) := by
   induction ht with
