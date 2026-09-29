@@ -182,6 +182,26 @@ inductive SequenceTerm (s : OCF.Denis.Supply) : Term → Prop where
 theorem SequenceTerm.normal {s : OCF.Denis.Supply} {t : Term} (ht : SequenceTerm s t) : IsNormal s t := by
   cases ht <;> assumption
 
+/-- Pull a proved sequence branch back across the terminating nested-index
+normalization. This turns every normal term whose normalized presentation is
+already in `SequenceTerm` into a member of the assembled family without
+changing its ordinal value. -/
+theorem SequenceTerm.of_nested_normalize {s : OCF.Denis.Supply} {t : Term}
+    (ht : IsNormal s t) (hn : SequenceTerm s (Nested.normalize s t)) : SequenceTerm s t :=
+  .equalValue hn ht (Nested.denote_normalize s t).symm
+
+/-- A direct integration rule for the proved nested successor-parameter
+rewrite. In particular this covers collapse indices of the form
+`I(q, succ (psi (I(r,b),t)))` whenever the replacement branch is already
+assembled. -/
+theorem SequenceTerm.of_nested_collapse {s : OCF.Denis.Supply} {q r b t a : Term}
+    (hn : IsNormal s (nestedCollapse q r b t a))
+    (hqr : denote s q < denote s r) (hat : denote s a ≤ denote s t)
+    (hseq : SequenceTerm s (.psi (.I r b) a)) :
+    SequenceTerm s (nestedCollapse q r b t a) := by
+  have h := nestedCollapse_replacement_normal s q r b t a hn hqr hat
+  exact .equalValue hseq hn h.2
+
 theorem SequenceTerm.hasNormalSequence {s : OCF.Denis.Supply} {t : Term} (ht : SequenceTerm s t) :
     HasNormalSequence s (denote s t) := by
   induction ht with
