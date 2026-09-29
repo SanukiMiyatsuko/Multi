@@ -38,18 +38,45 @@ theorem indexIterFrom_sup_fixedpoint (s : Supply) (r b : O) (hb : b < I s r b) :
       fun x hx => (lt_sup_iff _ x).mp hx⟩
   exact (I_fundamentalSequence s r _ _ hf).sup_eq.symm.trans (hf.shift 1).sup_eq
 
-theorem indexIterFrom_lt_first_succ_rank (s : Supply) (r b : O)
-    (hb : b < I s (succ r) 0) (n : Nat) : indexIterFrom s r b n < I s (succ r) 0 := by
+/-- Iteration at a lower rank stays below any higher-rank I-index once
+its starting point is below that index. This is the common bound needed
+for both zero and successor parameters of regular collapse indices. -/
+theorem indexIterFrom_lt_higher_index (s : Supply) (r q c b : O)
+    (hrq : r < q) (hb : b < I s q c) (n : Nat) :
+    indexIterFrom s r b n < I s q c := by
   induction n with
   | zero => exact hb
-  | succ n ih => exact I_lower_rank_closed s r (succ r) 0 _ (lt_succ_self r) ih
+  | succ n ih => exact I_lower_rank_closed s r q c _ hrq ih
+
+/-- If the higher I-index is regular, the whole omega-iteration remains
+strictly below it. -/
+theorem indexIterFrom_sup_lt_higher_regular_index (s : Supply) (r q c b : O)
+    (hrq : r < q) (hreg : RegularIndex s (I s q c))
+    (hb : b < I s q c) :
+    sup (indexIterFrom s r b) < I s q c := by
+  obtain ⟨bound, hbound, hfb⟩ := small_nat
+    (regularIndex_regular s _ hreg)
+    (indexIterFrom s r b) (indexIterFrom_lt_higher_index s r q c b hrq hb)
+  exact lt_of_le_of_lt ((sup_le_iff _ bound).mpr (fun n => Or.inl (hfb n))) hbound
+
+theorem indexIterFrom_lt_first_succ_rank (s : Supply) (r b : O)
+    (hb : b < I s (succ r) 0) (n : Nat) : indexIterFrom s r b n < I s (succ r) 0 :=
+  indexIterFrom_lt_higher_index s r (succ r) 0 b (lt_succ_self r) hb n
 
 theorem indexIterFrom_sup_lt_first_succ_rank (s : Supply) (r b : O)
-    (hb : b < I s (succ r) 0) : sup (indexIterFrom s r b) < I s (succ r) 0 := by
-  obtain ⟨bound, hbound, hfb⟩ := small_nat
-    (regularIndex_regular s _ (Or.inl ⟨succ r, rfl⟩))
-    (indexIterFrom s r b) (indexIterFrom_lt_first_succ_rank s r b hb)
-  exact lt_of_le_of_lt ((sup_le_iff _ bound).mpr (fun n => Or.inl (hfb n))) hbound
+    (hb : b < I s (succ r) 0) : sup (indexIterFrom s r b) < I s (succ r) 0 :=
+  indexIterFrom_sup_lt_higher_regular_index s r (succ r) 0 b (lt_succ_self r)
+    (Or.inl ⟨succ r, rfl⟩) hb
+
+/-- Successor-parameter specialization used by the still-open rules 8/9
+family. The unresolved part is identifying this supremum with the
+corresponding collapse value, not keeping the approximants below the
+regular index. -/
+theorem indexIterFrom_sup_lt_successor_parameter (s : Supply) (r b start : O)
+    (hstart : start < I s (succ r) (succ b)) :
+    sup (indexIterFrom s r start) < I s (succ r) (succ b) :=
+  indexIterFrom_sup_lt_higher_regular_index s r (succ r) (succ b) start
+    (lt_succ_self r) (Or.inr ⟨succ r, b, rfl⟩) hstart
 
 theorem succ_lt_I_succ (s : Supply) (r b : O) : succ b < I s r (succ b) := by
   have hb := lt_of_le_of_lt (index_le_I s r b) (I_strict s r (lt_succ_self b))

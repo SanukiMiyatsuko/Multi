@@ -242,6 +242,16 @@ r の正規基本列 f を用いれば、それぞれ I(f(i),0)、I(f(i),succ(ψ
 引数も零・後続・添字未満の正規な極限を扱う。既知の対角枝と値の等しい
 別表現も含む。固定される rank や加法の左辺には必要な正規性だけを要求する。
 
+`SequenceTerm.of_nested_normalize` は、`Nested.normalize` 後の項が `SequenceTerm` なら
+元の正規項も同じ順序数値でこの族に戻せることを証明する。
+`SequenceTerm.of_nested_collapse` は
+`psi(I(q,succ(psi(I(r,b),t))),a)` を、q<r かつ a≤t のもとで
+既知の `psi(I(r,b),a)` 枝へ移す。`SequenceTerm.of_nested_firstIndex` はさらに
+内側が `I(r,0)` の統合済み枝である場合を直接組み込む。
+したがって一般の `I(r,succ b)` のうち、既証明の nested-index 書き換えで
+`I(r,0)` 枝へ落ちる部分族は統合済みである。任意の successor-parameter 添字を
+処理したという意味ではなく、一般の場合は引き続き未完了である。
+
 `SequenceTerm.minimal_normal_sequence` は、この族の任意の極限項について、
 実際の共終数を添字長とする正規基本列の存在と、添字長の正規表現を証明する。
 `minimalSequence` は証明された列を選ぶ順序数関数であり、`minimalStepTerm` は
