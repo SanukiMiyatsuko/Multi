@@ -1,0 +1,11 @@
+{"plugins": [],
+ "package": "Multi",
+ "options": {},
+ "name": "Multi.Constructive.Term3Fundamental",
+ "isModule": false,
+ "importArts":
+ {"Multi.order":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\order.olean"]],
+  "Multi.Term3Syntax":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Term3Syntax.olean"]]},
+ "dynlibs": []}

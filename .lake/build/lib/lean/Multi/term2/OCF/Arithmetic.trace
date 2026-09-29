@@ -1,0 +1,33 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["19aac6b086cb3be5.olean"],
+  "m": false,
+  "i": "337794014574ace4.ilean",
+  "c": "0b3238a07b809479.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean c:\\Users\\Owner\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lean.exe F:\\projects\\leanprojects\\wellfound\\Multi\\Multi\\term2\\OCF\\Arithmetic.lean -o F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\Arithmetic.olean -i F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\Arithmetic.ilean -c F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Multi\\term2\\OCF\\Arithmetic.c --setup F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Multi\\term2\\OCF\\Arithmetic.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["deps",
+   [["Multi/Multi:extraDep", [["@Multi:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["Multi.term2.OCF.Supremum transitive imports (legacy)",
+       "04d72cb5d3d7b8b6"],
+      ["Multi.term2.OCF.Supremum:importAllArts", "9cdeb0f8c47ae248"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.34.0, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b",
+   "a1c6c7aa3e9abfe7"],
+  ["F:\\projects\\leanprojects\\wellfound\\Multi\\Multi\\term2\\OCF\\Arithmetic.lean",
+   "affb1d39feed62d9"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: Multi.term2.OCF.Arithmetic", "52aa29868193e1db"],
+  ["Package.id?: (some Multi)", "11fc43bb8a52a84e"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "7b4f46ddb2763ea5"}

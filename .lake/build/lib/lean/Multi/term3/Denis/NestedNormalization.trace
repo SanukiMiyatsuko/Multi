@@ -1,0 +1,33 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["d8c1f9d2c715817f.olean"],
+  "m": false,
+  "i": "6719e1d8d352dca8.ilean",
+  "c": "b23a6af39bd10ef7.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean c:\\Users\\Owner\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lean.exe F:\\projects\\leanprojects\\wellfound\\Multi\\Multi\\term3\\Denis\\NestedNormalization.lean -o F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term3\\Denis\\NestedNormalization.olean -i F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term3\\Denis\\NestedNormalization.ilean -c F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Multi\\term3\\Denis\\NestedNormalization.c --setup F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Multi\\term3\\Denis\\NestedNormalization.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["deps",
+   [["Multi/Multi:extraDep", [["@Multi:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["Multi.term3.Denis.NestedIndex transitive imports (legacy)",
+       "f62fbc343da382e4"],
+      ["Multi.term3.Denis.NestedIndex:importAllArts", "86b3e8aececddcdc"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.34.0, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b",
+   "a1c6c7aa3e9abfe7"],
+  ["F:\\projects\\leanprojects\\wellfound\\Multi\\Multi\\term3\\Denis\\NestedNormalization.lean",
+   "33019097a75d023c"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: Multi.term3.Denis.NestedNormalization", "89b9b50d24455a5c"],
+  ["Package.id?: (some Multi)", "11fc43bb8a52a84e"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "0370eceac2f7999d"}

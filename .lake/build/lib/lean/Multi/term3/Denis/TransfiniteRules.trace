@@ -1,0 +1,33 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["f15966c221fa8f4d.olean"],
+  "m": false,
+  "i": "f5e3594895b92317.ilean",
+  "c": "9577ef0994e8fe9d.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean c:\\Users\\Owner\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lean.exe F:\\projects\\leanprojects\\wellfound\\Multi\\Multi\\term3\\Denis\\TransfiniteRules.lean -o F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term3\\Denis\\TransfiniteRules.olean -i F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term3\\Denis\\TransfiniteRules.ilean -c F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Multi\\term3\\Denis\\TransfiniteRules.c --setup F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Multi\\term3\\Denis\\TransfiniteRules.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["deps",
+   [["Multi/Multi:extraDep", [["@Multi:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["Multi.term3.Denis.Cofinality transitive imports (legacy)",
+       "397e330009aaa53b"],
+      ["Multi.term3.Denis.Cofinality:importAllArts", "101dc3fb03ec9d58"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.34.0, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b",
+   "a1c6c7aa3e9abfe7"],
+  ["F:\\projects\\leanprojects\\wellfound\\Multi\\Multi\\term3\\Denis\\TransfiniteRules.lean",
+   "cd750e457d73cd28"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: Multi.term3.Denis.TransfiniteRules", "4e37a6a1bb0cf869"],
+  ["Package.id?: (some Multi)", "11fc43bb8a52a84e"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "ef9d134f13e09676"}

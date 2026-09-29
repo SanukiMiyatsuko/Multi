@@ -1,0 +1,9 @@
+{"plugins": [],
+ "package": "Multi",
+ "options": {},
+ "name": "Multi.Term3Syntax",
+ "isModule": false,
+ "importArts":
+ {"Multi.order":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\order.olean"]]},
+ "dynlibs": []}

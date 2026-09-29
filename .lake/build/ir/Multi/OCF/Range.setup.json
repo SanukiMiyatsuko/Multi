@@ -1,0 +1,11 @@
+{"plugins": [],
+ "package": "Multi",
+ "options": {},
+ "name": "Multi.OCF.Range",
+ "isModule": false,
+ "importArts":
+ {"Multi.OCF.WellOrder":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\OCF\\WellOrder.olean"]],
+  "Multi.OCF.Ordinal":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\OCF\\Ordinal.olean"]]},
+ "dynlibs": []}

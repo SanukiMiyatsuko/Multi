@@ -1,0 +1,15 @@
+{"plugins": [],
+ "package": "Multi",
+ "options": {},
+ "name": "Multi.term3.Term3Correspondence",
+ "isModule": false,
+ "importArts":
+ {"Multi.term3.Term3Syntax":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term3\\Term3Syntax.olean"]],
+  "Multi.term3.Term3Normal":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term3\\Term3Normal.olean"]],
+  "Multi.term3.Term3Fundamental":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term3\\Term3Fundamental.olean"]],
+  "Multi.order":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\order.olean"]]},
+ "dynlibs": []}

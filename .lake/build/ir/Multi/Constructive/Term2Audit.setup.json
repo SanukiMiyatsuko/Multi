@@ -1,0 +1,33 @@
+{"plugins": [],
+ "package": "Multi",
+ "options": {},
+ "name": "Multi.Constructive.Term2Audit",
+ "isModule": false,
+ "importArts":
+ {"Multi.term2":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2.olean"]],
+  "Multi.order":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\order.olean"]],
+  "Multi.Term2Syntax":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Term2Syntax.olean"]],
+  "Multi.Term2Consequences":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Term2Consequences.olean"]],
+  "Multi.Constructive.Term2Universal":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2Universal.olean"]],
+  "Multi.Constructive.Term2Stages":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2Stages.olean"]],
+  "Multi.Constructive.Term2Inverse":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2Inverse.olean"]],
+  "Multi.Constructive.Term2Commutation":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2Commutation.olean"]],
+  "Multi.Constructive.Term2Closure":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2Closure.olean"]],
+  "Multi.Constructive.Term2Brackets":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2Brackets.olean"]],
+  "Multi.Constructive.Term2Anchors":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2Anchors.olean"]],
+  "Multi.Constructive.Term2":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2.olean"]],
+  "Multi.Constructive.Stages":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Stages.olean"]]},
+ "dynlibs": []}

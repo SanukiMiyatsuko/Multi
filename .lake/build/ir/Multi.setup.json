@@ -1,0 +1,9 @@
+{"plugins": [],
+ "package": "Multi",
+ "options": {},
+ "name": "Multi",
+ "isModule": false,
+ "importArts":
+ {"Multi.Basic":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Basic.olean"]]},
+ "dynlibs": []}

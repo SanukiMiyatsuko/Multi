@@ -1,0 +1,33 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["37492d8c7e279467.olean"],
+  "m": false,
+  "i": "79745e9d993b78ca.ilean",
+  "c": "6c7d6b061c25134b.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean c:\\Users\\Owner\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lean.exe F:\\projects\\leanprojects\\wellfound\\Multi\\Multi\\term3\\Denis\\Sequences.lean -o F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term3\\Denis\\Sequences.olean -i F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term3\\Denis\\Sequences.ilean -c F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Multi\\term3\\Denis\\Sequences.c --setup F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Multi\\term3\\Denis\\Sequences.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["deps",
+   [["Multi/Multi:extraDep", [["@Multi:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["Multi.term3.Denis.WellDefined transitive imports (legacy)",
+       "7993ff487bb37e99"],
+      ["Multi.term3.Denis.WellDefined:importAllArts", "bf35844e607392f4"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.34.0, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b",
+   "a1c6c7aa3e9abfe7"],
+  ["F:\\projects\\leanprojects\\wellfound\\Multi\\Multi\\term3\\Denis\\Sequences.lean",
+   "9766876a9ad38a8d"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: Multi.term3.Denis.Sequences", "a82c325d230ceb70"],
+  ["Package.id?: (some Multi)", "11fc43bb8a52a84e"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "72e8a760b755db5b"}

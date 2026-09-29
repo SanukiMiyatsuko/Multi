@@ -1,0 +1,11 @@
+{"plugins": [],
+ "package": "Multi",
+ "options": {},
+ "name": "Multi.Term2Consequences",
+ "isModule": false,
+ "importArts":
+ {"Multi.order":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\order.olean"]],
+  "Multi.Term2Syntax":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Term2Syntax.olean"]]},
+ "dynlibs": []}

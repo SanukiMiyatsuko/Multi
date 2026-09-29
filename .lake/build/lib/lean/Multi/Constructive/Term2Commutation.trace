@@ -1,0 +1,33 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["c9c17b0495f190b1.olean"],
+  "m": false,
+  "i": "286c2fee680be528.ilean",
+  "c": "bf6cde70049576cc.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean c:\\Users\\Owner\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lean.exe F:\\projects\\leanprojects\\wellfound\\Multi\\Multi\\Constructive\\Term2Commutation.lean -o F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2Commutation.olean -i F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2Commutation.ilean -c F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Multi\\Constructive\\Term2Commutation.c --setup F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Multi\\Constructive\\Term2Commutation.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["deps",
+   [["Multi/Multi:extraDep", [["@Multi:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["Multi.Constructive.Term2Anchors transitive imports (legacy)",
+       "b2458d2373452d2f"],
+      ["Multi.Constructive.Term2Anchors:importAllArts", "cc22bb365dbddcc4"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.34.0, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b",
+   "a1c6c7aa3e9abfe7"],
+  ["F:\\projects\\leanprojects\\wellfound\\Multi\\Multi\\Constructive\\Term2Commutation.lean",
+   "a308c9548faed045"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: Multi.Constructive.Term2Commutation", "6e42858752827bbf"],
+  ["Package.id?: (some Multi)", "11fc43bb8a52a84e"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "c22fc8ba4ec557ca"}

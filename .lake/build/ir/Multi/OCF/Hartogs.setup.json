@@ -1,0 +1,15 @@
+{"plugins": [],
+ "package": "Multi",
+ "options": {},
+ "name": "Multi.OCF.Hartogs",
+ "isModule": false,
+ "importArts":
+ {"Multi.OCF.WellOrder":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\OCF\\WellOrder.olean"]],
+  "Multi.OCF.Supremum":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\OCF\\Supremum.olean"]],
+  "Multi.OCF.Range":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\OCF\\Range.olean"]],
+  "Multi.OCF.Ordinal":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\OCF\\Ordinal.olean"]]},
+ "dynlibs": []}

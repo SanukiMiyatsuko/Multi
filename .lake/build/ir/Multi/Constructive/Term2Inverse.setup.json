@@ -1,0 +1,19 @@
+{"plugins": [],
+ "package": "Multi",
+ "options": {},
+ "name": "Multi.Constructive.Term2Inverse",
+ "isModule": false,
+ "importArts":
+ {"Multi.order":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\order.olean"]],
+  "Multi.Term2Syntax":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Term2Syntax.olean"]],
+  "Multi.Constructive.Term2Stages":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2Stages.olean"]],
+  "Multi.Constructive.Term2Commutation":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2Commutation.olean"]],
+  "Multi.Constructive.Term2Anchors":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Term2Anchors.olean"]],
+  "Multi.Constructive.Stages":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Constructive\\Stages.olean"]]},
+ "dynlibs": []}

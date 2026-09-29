@@ -1,0 +1,13 @@
+{"plugins": [],
+ "package": "Multi",
+ "options": {},
+ "name": "Multi.term2.Constructive.Term2Stages",
+ "isModule": false,
+ "importArts":
+ {"Multi.term2.Term2Syntax":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\Term2Syntax.olean"]],
+  "Multi.order":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\order.olean"]],
+  "Multi.Stages":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\Stages.olean"]]},
+ "dynlibs": []}

@@ -1,8 +1,8 @@
 import Lean
-import Multi.term3.Denis.SuccessorRankSequences
+import Multi.term3.Denis.SequenceAssembly
 
 /-! Audit the actual imported declarations, with no dependence on Term3.lean's
-unfinished theorems. Run after `lake build Multi.term3.Denis.SuccessorRankSequences`.
+unfinished theorems. Run after `lake build Multi.term3.Denis.SequenceAssembly`.
 The ordinal model uses the existing classical ordinal library. The purely
 syntactic correspondence module retains the stricter constructive axiom set.
 -/

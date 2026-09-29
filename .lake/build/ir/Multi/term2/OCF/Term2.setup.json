@@ -1,0 +1,33 @@
+{"plugins": [],
+ "package": "Multi",
+ "options": {},
+ "name": "Multi.term2.OCF.Term2",
+ "isModule": false,
+ "importArts":
+ {"Multi.term2.Term2Syntax":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\Term2Syntax.olean"]],
+  "Multi.term2.Term2Consequences":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\Term2Consequences.olean"]],
+  "Multi.term2.OCF.WellOrder":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\WellOrder.olean"]],
+  "Multi.term2.OCF.Term2Interpretation":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\Term2Interpretation.olean"]],
+  "Multi.term2.OCF.Supremum":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\Supremum.olean"]],
+  "Multi.term2.OCF.Range":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\Range.olean"]],
+  "Multi.term2.OCF.Principal":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\Principal.olean"]],
+  "Multi.term2.OCF.Ordinal":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\Ordinal.olean"]],
+  "Multi.term2.OCF.Hierarchy":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\Hierarchy.olean"]],
+  "Multi.term2.OCF.Hartogs":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\Hartogs.olean"]],
+  "Multi.term2.OCF.Collapse":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\Collapse.olean"]],
+  "Multi.term2.OCF.Arithmetic":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\Arithmetic.olean"]],
+  "Multi.order":
+  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\order.olean"]]},
+ "dynlibs": []}

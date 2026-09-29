@@ -1,0 +1,24 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs": "b96a6c1f317202eb.exe",
+ "log":
+ [{"message":
+   ".> c:\\Users\\Owner\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\clang.exe -o F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\bin\\multi.exe @F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\bin\\multi.exe.rsp",
+   "level": "trace"}],
+ "inputs":
+ [["Main:linkInfo",
+   [["Module.moreLinkObjs",
+     [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Main.c.o.noexport",
+       "ff0d1caaabbb2d9f"],
+      ["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Multi\\Basic.c.o.noexport",
+       "d6db873e80cd0f44"],
+      ["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\ir\\Multi.c.o.noexport",
+       "7bc9bff90acc33c2"]]],
+    ["Module.moreLinkLibs", "00000000000006bb"],
+    ["Module.moreLinkArgs: #[]", "00000000000006bb"]]],
+  ["LeanExe.exeOnlyLinkArgs: #[-Wl,--whole-archive, -lleanmanifest, -Wl,--no-whole-archive]",
+   "d9dc93f51f923c09"],
+  ["Lean 4.34.0, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b",
+   "a1c6c7aa3e9abfe7"],
+  ["x86_64-w64-windows-gnu", "360db333d006d911"]],
+ "depHash": "97fee3f428e6d3c9"}
