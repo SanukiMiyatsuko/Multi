@@ -135,7 +135,7 @@ theorem psi_successor_plateau (s : Supply) (k a : O) (hak : a < k)
   exact psi_min s k (succ a) (psi s k a) ⟨psi_le s k a,
     fun x hx hxk => psi_closed s k a x (C_successor_plateau s k a hak hpa x hx) hxk⟩
 
-/-- Once a countable argument lies beyond its collapse, every argument
+/-- Once an argument lies beyond its collapse, every argument
 below the same index has collapse at most that value. -/
 theorem psi_bounded_of_postfixed (s : Supply) (k a c : O)
     (hc : c < k) (hpa : psi s k a ≤ a) : psi s k c ≤ psi s k a := by
@@ -209,7 +209,7 @@ theorem revised_psi_first_successor_fundamentalSequence (s : OCF.Denis.Supply) (
     (OCF.Denis.psi_pos s _ _ (OCF.Denis.regular_pos (OCF.Denis.first_regular s)))
     (psi_first_successor_dense s a ha harg)
 
-/-- For normal countable successor arguments the extra predecessor
+/-- For normal successor arguments below the first regular index the extra predecessor
 membership premise is derived from the parent's normality condition. -/
 theorem revised_psi_first_normal_successor_fundamentalSequence (s : OCF.Denis.Supply)
     (a : OCF.Denis.O) (ha : Represented s (succ a)) (hak : a < OCF.Denis.I s 0 0)

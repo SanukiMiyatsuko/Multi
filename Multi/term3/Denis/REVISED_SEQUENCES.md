@@ -49,7 +49,10 @@
 - `revised_obstruction_fundamentalSequence`：元の規則10.5の反例の親の場合。
 - `revised_collapseI_fundamentalSequence`：ψ_{I(0,0)}(I(1,0)) の場合。
 
-一般の可算対象で `DenseBelow` を示すことは未完了である。
+`FirstInterval.lean` の `normal_dense_below_first_diagonal` は、
+`psi (I 0 0) (I 0 0)` 以下のすべての正規な極限項で `DenseBelow` を証明する。
+`revised_normal_below_first_diagonal_fundamentalSequence` がこの区間全体での
+修正基本列の降下・狭義増加・共終性を与える。一般の可算対象での証明は未完了である。
 また `not_dense_regular` は、非可算正則基数には自然数で列挙した有限記法項が
 共終になれないことを証明する。この場合の基本列は順序数を添字として扱う必要がある。
 正則基数の恒等基本列は `regular_fundamentalSequence` と
@@ -85,6 +88,129 @@
 既知の `DenseBelow` は `add_dense` と `I_dense` により加法と I の極限に伝播する。
 また `not_dense_of_uncountable_cofinality` は、正則基数だけでなく
 共終数が ω より大きい任意の親で自然数添字の候補列が不足することを示す。
+
+`successor_rank_zero_dense` と `revised_successor_rank_zero_fundamentalSequence` は、
+任意の正規形で表せる rank r に対する `psi (I (succ r) 0) 0` の族全体を扱う。
+`SuccessorSequence.lean` は最初の正則添字での ψ の後続引数の枝を扱い、
+引数がその添字未満なら前者の閉包所属を親の正規性から導く。
+`FirstInterval.lean` はこの後続枝と極限枝・加法を組み合わせた正規項の帰納法で、
+最初の対角崩壊値以下の区間全体の密度を証明する。
+
+## 後続枝と可算尾部の極限枝
+
+`ClosureSubterms.lean` により、以下は C の元の閉包定義から導かれる。
+
+- `C_predecessor`：後続順序数が C に属すれば前者も属す。
+- `C_suffix`：x=r+b が C に属すれば b も属す。
+- `C_normal_index_parameters`：正規な I(r,b) が C に属すれば r,b も属す。
+- `C_principal_prefix`：加法的主項 p と b<p について、p+b の C 所属から p の所属を得る。
+- `psi_predecessor_argument_normal_general`：ψ の正規な後続引数から前者の閉包所属を得る。引数が可算であるという制限はない。
+
+したがって `revised_psi_first_normal_successor_general` は最初の正則添字の ψ の
+正規な後続枝すべてを扱う。
+
+`CountableTails.lean` の `composite_eventual_argument_normal` は、
+閉包の有限性と連続性を使って、固定パラメータを持つ極限展開の閉包所属が
+ある有限段階以降ずっと成立することを証明する。
+`psi_first_normal_sum_limit_dense` と `psi_first_normal_I_limit_dense` はこれを
+和と I の可算尾部の極限枝に適用する。尾部 b の `DenseBelow` は明示的な前提であり、
+未知の尾部の共終性を仮定なしに証明したという主張ではない。
+
+`RegularDiagonals.lean` では一般の対角列について、添字 r の正規表現と
+正の cutoff での構成可能性から、すべての内側・外側の項の正規表現を導く。
+有限パラメータの I(n,m) はこの構成可能性を満たすので、自然数 n,m すべてについて
+`revised_finite_parameters_diagonal_fundamentalSequence` が利用できる。
+
+## 非可算パラメータへの拡張
+
+`SeededDiagonal.lean` は、開始項 c<r と c,r の開始閉包への所属から対角列を構成する。
+これは添字 r がすべての正の cutoff の閉包に属すという従来の仮定を弱める。
+`NormalInterpolation.lean` の補間定理で、正規形の下界から正規な開始項を選べる。
+任意の順序数の下界に対する補間ではなく、正規形の下界に対する補間である。
+
+- `revised_psi_first_countable_regular_index_fundamentalSequence`：I(p,b) が正則で、p,b が正規形として表せる可算値である場合。親の正規性条件を用いて開始項を実際に構成する。
+- `revised_indexTree_diagonal_fundamentalSequence`：可算の正規項を葉として I と加法を有限回組み合わせた正規項の場合。非可算パラメータも扱える。
+
+`IndexTree` はここで証明済みの族を記述する補助述語であり、既存の正規形を
+これだけに制限したり、目標全体をこの族へ縮小したりはしない。
+非可算の ψ 値をパラメータとして使う一般の場合は残っている。
+
+`psi_normal_parameters_unique` は添字・引数双方の閉包所属を前提とした ψ の一意性を示す。
+現行の `IsNormal` に欠けている添字所属条件を、全項で証明済みとして扱わない。
+
+`ClosureCounterexample.lean` の `normal_closure_not_index_hereditary` は、
+正規な ψ 項の値からその表示添字の C 所属を無条件には回収できないことを示す。
+具体的に β=`psi (I 1 0) 0`、γ=`psi (I 1 0) 1`、κ=`I 0 (succ γ)` とすると、
+`psi κ 0 = β` は C(1,ω) に属するが、κ は属さない。
+`closureCounter_normalization` と `revised_closureCounter_fundamentalSequence` により、
+この表示にも値を保存する正規化と正当な修正基本列があることを証明する。
+反例は、基本列の不可能性ではなく、表示添字を無条件に回収する証明方針への反例である。
+
+## 値を保存する添字の書き換え
+
+`psi_index_plateau` は、任意の順序数 a,k,l について
+`psi l a ≤ k ≤ l` から `psi k a = psi l a` を導く。
+証明は C の seed に関する単調性と最小性を使い、添字の閉包所属を仮定しない。
+`ZeroPlateau.lean` はこの一般補題を使い、後続 rank の零引数崩壊と同じ値を持つ
+区間全体を既知の正規形と基本列へ帰着する。
+
+`NestedIndex.lean` の `psi_nested_index_eq` は λ=I(r,b) が正則、q<r、a≤t のとき
+
+```
+psi (I q (succ (psi λ t))) a = psi λ a
+```
+
+を証明する。t に有限性・可算性の条件はない。
+`nestedCollapse_replacement_normal` はこの記法項の書き換えの正規性・意味保存、
+`nestedCollapse_replacement_smaller` は項サイズの真の減少、
+`nestedCollapse_revised_agrees` は修正展開の各値の一致を証明する。
+`revised_nested_successor_rank_zero_fundamentalSequence` は、任意の正規 rank r、q≤r、
+任意の内側引数 t について零引数の修正基本列の正当性を与える。
+全場合を扱う書き換え手続きと一般の基本列の完成は引き続き未完了である。
+
+`NestedNormalization.lean` の `Nested.normalize` は、上の書き換えを部分項の
+任意の位置で適用する停止する処理である。`normalize_spec`、`normalize_normal`、
+`denote_normalize`、`normalize_idempotent` により、この規則に関する既約性、
+正規形・値の保存、冪等性を証明する。別の規則で等しい値になる項をすべて
+同一構文にすることまでは主張しない。
+
+## 非可算崩壊値を含む閉包の回収と対角列
+
+λ=I(r+1,0)、β=ψλ0 とする。`SuccessorRankClosure.lean` は次を証明する。
+
+- `C_successor_rank_interval`：β≤x≤λ かつ x∈C(cutoff,seed) なら r∈C(cutoff,seed)。r は RankBounded であり、有限正規項ならこの条件を満たす。
+- `successor_rank_small_presentation`：a<I(0,0) かつ ψκb=ψλa（κ は正則添字）なら κ≤λ かつ b=a。
+- `C_successor_rank_small_parameters`：同じ a について ψλa の C 所属から r,a の所属を導く。
+
+これらは表示された κ が C に属すという誤った仮定を使わない。
+`CollapseTrees.lean` の `CollapseTree` は、既存の `IndexTree` に加え、
+この ψλa を rank の中にも再帰的に使える族を記述する。
+`revised_collapseTree_diagonal_normalFundamentalSequence` は対角崩壊 ψΩt の修正列が
+正規形を保存する実順序数の基本列であることを、
+`collapseTree_diagonal_cofinality` はその共終数が ω であることを証明する。
+親の正規性に対応する閉包条件と t が正則添字であることは明示的な前提である。
+これは一般の正規項全体の証明を、この族への制限で置き換えるものではない。
+
+## 後続 rank の添字における全後続引数
+
+`SuccessorRankSequences.lean` は、λ=I(r+1,0) について
+
+```
+b₀ = succ (psi λ a)
+bₙ₊₁ = I(r, bₙ)
+supₙ bₙ = psi λ (succ a)
+```
+
+を証明する。r は RankBounded、a は C(a,ψλa) に属す。a は非可算でもよい。
+`successor_rank_succ_fundamentalSequence` が狭義増加・親より真に小さいこと・共終性を与える。
+`revised_successor_rank_normal_succ_normalFundamentalSequence` は、親が正規な場合、
+前者の閉包所属を導いて修正基本列の正規形保存を証明する。
+`successor_rank_normal_succ_cofinality` で最小添字長が ω であることも確認する。
+
+`successor_rank_limit_normalFundamentalSequence` は a<λ の正規な極限引数について、
+既知の順序数長の正規基本列を ψλ に移す。引数の基本列の存在そのものは前提である。
+一方 `revised_successor_rank_bounded_argument_fundamentalSequence` は、
+a が最初の対角崩壊以下の正規項である区間全体を、密度の未証明の前提なしで扱う。
 
 任意の正規な親について `NormalFundamentalSequence` を構成する定理は未完了である。
 この仕様の導入や任意順序数の `intrinsicSequence_spec` を、その正規形保存の証明と
