@@ -201,6 +201,13 @@ r の基本列をこの上限へ写し、正規形を保存する。
 `minimalSequence`、`minimalDomainTerm`、`minimalStepTerm` はそれぞれ順序数関数、
 添字長の正規項、正規添字での出力項を選び、意味・正規性・狭義増加を保証する。
 `SequenceTerm` は既存の `IsNormal` 全体を置き換えない。
+`SequenceTerm.of_nested_normalize` は、`Nested.normalize` 後の項がこの族に入るなら
+元の正規項も同じ順序数値の枝としてこの族に戻せることを証明する。
+`SequenceTerm.of_nested_collapse` は `I(q,succ(psi(I(r,b),t)))` 型の表示を、
+既に証明済みの `psi(I(r,b),a)` 枝へ直接移す。さらに `of_nested_firstIndex` は
+内側が `I(r,0)` の証明済み枝である場合を `SequenceTerm` に組み込む。
+これらは一般の `I(r,succ b)` を解決したという主張ではなく、値保存書き換えで
+既知の枝へ落ちる successor-parameter 添字の部分族を閉じるものである。
 任意の正規項がこの族に入るという定理はまだない。
 
 `DiagonalSequence.lean` は、最初の弱到達不能基数 κ=`I(1,0)` に対する
