@@ -1,9 +1,0 @@
-{"plugins": [],
- "package": "Multi",
- "options": {},
- "name": "Multi.term2.OCF.Ordinal",
- "isModule": false,
- "importArts":
- {"Multi.term2.OCF.WellOrder":
-  [["F:\\projects\\leanprojects\\wellfound\\Multi\\.lake\\build\\lib\\lean\\Multi\\term2\\OCF\\WellOrder.olean"]]},
- "dynlibs": []}
