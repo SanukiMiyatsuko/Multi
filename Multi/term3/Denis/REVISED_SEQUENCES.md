@@ -194,6 +194,20 @@ psi (I q (succ (psi λ t))) a = psi λ a
 親の正規性に対応する閉包条件と t が正則添字であることは明示的な前提である。
 これは一般の正規項全体の証明を、この族への制限で置き換えるものではない。
 
+`CollapseParameterRecovery.lean` は、後続 rank に限定していた回収を一般化する。
+κ=I(r,v)、p=ψκ(a) とする。
+
+- `psi_presentation_of_parameters_lt`：r,v,a<p なら、任意の正則添字 λ による ψλ(b)=p という表示は λ≤κ と b=a を満たす。その別表示の正規性は要求しない。
+- `C_collapse_index_parameters_interval`：r,v<p なら、p≤x≤κ の閉包所属から r,v の所属を導く。閉包の I 構成が κ 未満なら、両パラメータが p 未満の場合は ψ の閉包性と矛盾する。そうでなければそのパラメータの構成へ帰納する。κ 自身なら正規な I のパラメータ回収を使う。
+- `C_proper_collapse_index`：κ が正規な I 表示で親の閉包に属す場合、p の閉包所属から κ の所属を回収する。a<κ は不要である。
+- `C_proper_collapse_parameters_below`：さらに a<κ かつ a∈C(a,p) なら、p の所属から κ,a の双方の所属を導く。
+- `C_first_rank_below_parameters`：任意の RankBounded な r の第一添字 I(r,0) では r,a を回収する。零・後続・極限の rank を扱う。
+
+`CollapseTree.firstCollapseBelow` と `properCollapseBelow` は、この一般化を閉包近似と対角列に組み込む。
+後者は正規な ψ(I(r,v),a)、a<I(r,v)、親の添字所属を前提に、r,v,a の各部分を再帰的に扱う。
+`equalValue` は同じ値の別の正規表示への移送を許す。
+内側の崩壊引数がその添字以上の場合の一般の引数回収は、ここでは証明していない。
+
 ## 後続 rank の添字における全後続引数
 
 `SuccessorRankSequences.lean` は、λ=I(r+1,0) について
@@ -473,9 +487,77 @@ x が正規形で表せる ∧ x<a
 `hasCoveringSequence_proper_limit_below` は引数のこの帰納条件を親へ移す。
 `CoveringSequenceTerm` は、既知の可算共終数の枝、正則基数、正則引数の崩壊、
 加法・I・添字未満の極限崩壊の入れ子を統合し、各項で強い条件が成立すると証明する。
-これはすべての `SequenceTerm` や `IsNormal` を覆うとの主張ではない。
-特に極限 rank の零・後続崩壊などで強い条件を引き継ぐ証明は、引き続き必要である。
+さらに `SequenceTerm.hasCoveringSequence` により、既存の `SequenceTerm` 全体についても
+この強い列の存在を証明した。これは `IsNormal` 全体を覆うとの主張ではない。
 弱い仕様から選んだ既存の `minimalSequence` に、この追加条件を自動的には適用しない。
+
+## 極限 rank の枝での正規添字の共終性
+
+`RankSequenceCoverage.lean` の `normal_rank_interpolation` は、極限 rank r と
+c<I(q,c) がすべての q で成立する固定引数 c について、
+正規値 x<sup_{q<r}I(q,c) を正規な q<r における I(q,c) で上回れると証明する。
+r には `RankBounded` を要求し、有限正規形で表せる r はこれを満たす。
+c=0 とすべての後続 c が固定引数の条件を満たす。
+
+`rank_limit_coveringFundamentalSequence` は r の強い基本列をこの rank 極限へ移す。
+`limit_rank_zero_coveringFundamentalSequence`、`limit_rank_succ_coveringFundamentalSequence`、
+`limit_rank_successor_index_zero_coveringFundamentalSequence`、
+`limit_rank_successor_index_succ_coveringFundamentalSequence` が4枝に適用する。
+実際の共終性・最小長・出力の正規性に加え、正規な添字だけで正規値全体に共終となる。
+
+`hasCoveringSequence_nonlimit_collapse_induction` により、零・後続引数の帰納段階全体を
+強い条件でも処理できる。添字所属が欠ける表示は、同値な小さい正規 ψ 項への帰着で処理する。
+`normal_hasCoveringSequence_of_large_limit` と `largeLimitCoveringStep_iff_all_normal` は、
+残る帰納段階が添字以上の非可算正則ではない極限引数に限られることを証明する。
+`LargeLimitCoveringStep` はこの帰納段階を明示した未証明の命題であり、
+全体の定理が無条件に完成したことを意味しない。
+
+## 順序数長の複合引数の尾部
+
+`CompositeSequenceCoverage.lean` の `proper_composite_coveringFundamentalSequence` は、
+親の引数を op(b) として扱う。op は固定パラメータ p と変数の閉包所属を保存し、
+op(f(i)) は親の引数の強い基本列であるとする。
+p と b が親の崩壊値未満で正規形を持てば、補間と正規添字での共終性により、
+両方がすべての尾部の閉包の seed 未満となる正規な開始添字を構成する。
+添字 κ の所属も親から導き、ψ 像の実際の共終性と正規添字での共終性を証明する。
+自然数長には限定しない。
+
+`proper_I_small_parameters_coveringFundamentalSequence` は ψκ(I(r,b)) に適用する。
+親の正規性から r,b の閉包所属を回収し、r,b<κ から両者が親の崩壊値未満であることを導く。
+`hasCoveringSequence_I_small_parameters` と `CoveringSequenceTerm.smallIndexArgument` が、
+b の強い基本列から最小長 cf(b) の列を構成する。
+I(r,b)≥κ の場合や b の共終数が非可算の場合も扱う。
+r または b が κ 以上の場合までこの定理で処理済みとはしていない。
+
+## 大きな固定パラメータの閉包段階
+
+`ClosureStageApproximation.lean` は、正規形で表せる c<a を用いて
+x∈C(c,ψκ(c)) とできることを `RepresentedClosureStage s κ a x` と定義する。
+c 自身のこの閉包への所属は要求しない。
+`representedClosureStage_of_lt` は、正規値 x<ψκ(a) の補間からこの性質を導く。
+`CollapseTree.representedClosureStage` は x≥ψκ(a) の場合も含め、
+任意の正則添字 κ と極限 a に対して、親の閉包に属す `CollapseTree` の値に適用する。
+和・I のパラメータを回収し、正規な表示で添字所属を満たす崩壊では引数が a より小さいことを導いて、
+正規な段階を有限個まとめる。以前の近似補題と異なり、κ=Ω や a の正則性は不要である。
+この族には小さい正規値、和・I、添字未満の引数を持つ入れ子の正則添字の崩壊が入る。
+第一添字はすべての rank を扱い、一般の添字では親での添字所属を前提とする。
+任意の正規項で成立するとはまだ証明していない。
+
+`StagedCompositeSequences.lean` の `proper_staged_composite_coveringFundamentalSequence` は、
+固定パラメータ p<ψκ(a) をこの閉包段階の条件で置き換える。
+p と κ を構成できる正規な段階を選び、親の強い共終性で開始添字へ移す。
+変動する尾部 b には依然として b<ψκ(a) を要求する。
+
+`proper_I_tree_parameter_coveringFundamentalSequence` と
+`proper_sum_tree_parameter_coveringFundamentalSequence` は、それぞれ ψκ(I(r,b)) と ψκ(p+b) を扱う。
+親の正規性と添字所属、極限 b<κ、その強い基本列を前提とし、r または p が
+`CollapseTree` に属すれば、固定パラメータと引数全体の κ による上界を要求しない。
+開始添字も正規形で表され、列は実際の順序数で狭義増加・共終であり、
+正規な添字では正規値を出力し、それだけで親未満の全正規値に共終となる。
+`hasCoveringSequence_I_tree_parameter` と `hasCoveringSequence_sum_tree_parameter` は、
+その長さが最小の cf(b) であり、共終数も正規形で表せることを統合する。
+`CoveringSequenceTerm.treeIndexArgument` と `treeSumArgument` により入れ子に使用できる。
+固定パラメータがこの族の外にある場合、および b≥κ の一般の枝は未処理である。
 
 ## 証明済みの枝の統合
 
@@ -503,10 +585,10 @@ I(r,succ b) の零・後続引数を加える。`successorIndex` は零引数で
 
 未処理の ψ の枝を仮定として済ませたり、`IsNormal` の定義をこの族に縮小したりしていない。
 添字所属の欠ける表示、零・後続引数、非可算正則引数の帰納段階は処理済みである。
-`properRemainingLimitStep_iff_all_normal` は、全体の定理を非可算正則ではない
-極限引数の帰納段階 `ProperRemainingLimitStep` に帰着する。
-正規な添字での共終性を持つ列では、添字未満の極限枝の尾部選択は処理済みである。
-この強い帰納条件を残る枝にも証明することや、添字以上の残る極限引数などが未完了である。
+強い帰納条件のもとでは、添字未満の極限枝の尾部選択も処理済みである。
+`largeLimitCoveringStep_iff_all_normal` は、全体の強い定理を、添字以上の
+非可算正則ではない極限引数の帰納段階 `LargeLimitCoveringStep` に帰着する。
+この残る極限引数の一般の証明が未完了である。
 この帰着先の命題自体を証明済みとしたり、公理として追加したりしていない。
 
 任意の正規な親について `NormalFundamentalSequence` を構成する定理は未完了である。

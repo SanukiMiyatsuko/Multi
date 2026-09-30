@@ -1,4 +1,4 @@
-import Multi.term3.Denis.RankSequenceCoverage
+import Multi.term3.Denis.StagedCompositeSequences
 
 /-! Assemble minimal-length normal fundamental sequences. These lemmas
 retain both the actual ordinal cofinality and representability of the
@@ -968,6 +968,42 @@ theorem hasCoveringSequence_nonlimit_collapse_induction (s : OCF.Denis.Supply) (
               (represented_predecessor s d ⟨b, hb, hd⟩) ⟨a, ha, hc⟩ hrseq hmem harg
   · exact hasCoveringSequence_collapse_of_index_not_mem s k a hn hmem ih
 
+theorem hasCoveringSequence_I_small_parameters (s : OCF.Denis.Supply) (k r b : Term)
+    (hn : IsNormal s (.psi k (.I r b))) (hb : OCF.Denis.IsLimit (denote s b))
+    (hs : HasCoveringSequence s (denote s b))
+    (hrk : denote s r < denote s k) (hbk : denote s b < denote s k)
+    (hK : OCF.Denis.C s (denote s (.I r b)) (denote s (.psi k (.I r b))) (denote s k)) :
+    HasCoveringSequence s (denote s (.psi k (.I r b))) := by
+  obtain ⟨hlen, f, hf⟩ := hs hb
+  obtain ⟨_, _, _, hg⟩ := proper_I_small_parameters_coveringFundamentalSequence s k r b hn hK hrk hbk _
+    (OCF.Ordinal.lt_of_lt_of_le (OCF.Denis.finite_lt_omega 0) (OCF.Denis.omega_le_cofinality _ hb))
+    (OCF.Denis.cofinality_addPrincipal _ hb) f hf
+  exact hasCoveringSequence_of_minimal s _ _ hb hlen _ hg
+
+theorem hasCoveringSequence_I_tree_parameter (s : OCF.Denis.Supply) (k r b : Term)
+    (hn : IsNormal s (.psi k (.I r b))) (hb : OCF.Denis.IsLimit (denote s b))
+    (hs : HasCoveringSequence s (denote s b))
+    (hrTree : CollapseTree s r) (hbk : denote s b < denote s k)
+    (hK : OCF.Denis.C s (denote s (.I r b)) (denote s (.psi k (.I r b))) (denote s k)) :
+    HasCoveringSequence s (denote s (.psi k (.I r b))) := by
+  obtain ⟨hlen, f, hf⟩ := hs hb
+  obtain ⟨_, _, _, hg⟩ := proper_I_tree_parameter_coveringFundamentalSequence s k r b hn hK hrTree hbk _
+    (OCF.Ordinal.lt_of_lt_of_le (OCF.Denis.finite_lt_omega 0) (OCF.Denis.omega_le_cofinality _ hb))
+    (OCF.Denis.cofinality_addPrincipal _ hb) f hf
+  exact hasCoveringSequence_of_minimal s _ _ hb hlen _ hg
+
+theorem hasCoveringSequence_sum_tree_parameter (s : OCF.Denis.Supply) (k p b : Term)
+    (hn : IsNormal s (.psi k (.add p b))) (hb : OCF.Denis.IsLimit (denote s b))
+    (hs : HasCoveringSequence s (denote s b))
+    (hpTree : CollapseTree s p) (hbk : denote s b < denote s k)
+    (hK : OCF.Denis.C s (denote s (.add p b)) (denote s (.psi k (.add p b))) (denote s k)) :
+    HasCoveringSequence s (denote s (.psi k (.add p b))) := by
+  obtain ⟨hlen, f, hf⟩ := hs hb
+  obtain ⟨_, _, _, hg⟩ := proper_sum_tree_parameter_coveringFundamentalSequence s k p b hn hK hpTree hbk _
+    (OCF.Ordinal.lt_of_lt_of_le (OCF.Denis.finite_lt_omega 0) (OCF.Denis.omega_le_cofinality _ hb))
+    (OCF.Denis.cofinality_addPrincipal _ hb) f hf
+  exact hasCoveringSequence_of_minimal s _ _ hb hlen _ hg
+
 /-- The sole remaining clause for the stronger structural induction:
 a proper collapse at a non-regular limit argument at least its index.
 This is an explicit, still unproved proposition, not an axiom. -/
@@ -1033,6 +1069,18 @@ inductive CoveringSequenceTerm (s : OCF.Denis.Supply) : Term → Prop where
       OCF.Denis.C s (denote s a) (denote s (.psi k a)) (denote s k) → CoveringSequenceTerm s (.psi k a)
   | regularArgument {k a : Term} : IsNormal s (.psi k a) → OCF.Denis.UncountableRegular (denote s a) →
       OCF.Denis.C s (denote s a) (denote s (.psi k a)) (denote s k) → CoveringSequenceTerm s (.psi k a)
+  | smallIndexArgument {k r b : Term} : CoveringSequenceTerm s b → IsNormal s (.psi k (.I r b)) →
+      OCF.Denis.IsLimit (denote s b) → denote s r < denote s k → denote s b < denote s k →
+      OCF.Denis.C s (denote s (.I r b)) (denote s (.psi k (.I r b))) (denote s k) →
+      CoveringSequenceTerm s (.psi k (.I r b))
+  | treeIndexArgument {k r b : Term} : CoveringSequenceTerm s b → IsNormal s (.psi k (.I r b)) →
+      OCF.Denis.IsLimit (denote s b) → CollapseTree s r → denote s b < denote s k →
+      OCF.Denis.C s (denote s (.I r b)) (denote s (.psi k (.I r b))) (denote s k) →
+      CoveringSequenceTerm s (.psi k (.I r b))
+  | treeSumArgument {k p b : Term} : CoveringSequenceTerm s b → IsNormal s (.psi k (.add p b)) →
+      OCF.Denis.IsLimit (denote s b) → CollapseTree s p → denote s b < denote s k →
+      OCF.Denis.C s (denote s (.add p b)) (denote s (.psi k (.add p b))) (denote s k) →
+      CoveringSequenceTerm s (.psi k (.add p b))
   | equalValue {t u : Term} : CoveringSequenceTerm s u → IsNormal s t → denote s t = denote s u →
       CoveringSequenceTerm s t
 
@@ -1052,6 +1100,12 @@ theorem CoveringSequenceTerm.hasCoveringSequence {s : OCF.Denis.Supply} {t : Ter
   | @properLimit k a ha hn halim hbound hK ih =>
     exact hasCoveringSequence_proper_limit_below s k a hn halim ih hbound hK
   | @regularArgument k a hn hr hK => exact hasCoveringSequence_proper_regular_argument s k a hn hr hK
+  | @smallIndexArgument k r b hb hn hlim hrk hbk hK ih =>
+    exact hasCoveringSequence_I_small_parameters s k r b hn hlim ih hrk hbk hK
+  | @treeIndexArgument k r b hb hn hlim hrTree hbk hK ih =>
+    exact hasCoveringSequence_I_tree_parameter s k r b hn hlim ih hrTree hbk hK
+  | @treeSumArgument k p b hb hn hlim hpTree hbk hK ih =>
+    exact hasCoveringSequence_sum_tree_parameter s k p b hn hlim ih hpTree hbk hK
   | equalValue hu hn heq ih => rwa [heq]
 
 theorem hasCoveringSequence_first_index_collapse (s : OCF.Denis.Supply) (r a : OCF.Denis.O)
