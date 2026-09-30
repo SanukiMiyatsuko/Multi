@@ -304,6 +304,88 @@ r が零・後続なら ω、極限なら r の共終数を引き継ぐ。
 零引数での添字所属を仮定する必要はない。非可算長の列では、
 尾部を取るだけで正規添字に対する出力の正規形保存が従うとはしていない。
 
+## 順序数長の正規な尾部
+
+`TransfiniteTails.lean` の `NormalFundamentalSequence.shift` は、
+長さ λ が加法的主項であり、c<λ が正規形で表せるとき、
+i↦f(c+i) が同じ長さの正規基本列であると証明する。
+`cofinality_addPrincipal` により、最小長を用いる場合は長さの条件が自動的に満たされる。
+正規添字 i に対する c+i の正規表現は、既存の順序数加法の正規化から構成する。
+
+`psi_normal_limit_tail_normalFundamentalSequence` は a<κ の正規な親について、
+正規な開始位置 c での添字所属から、すべての尾部の添字所属を導く。
+`successor_index_limit_tail_normalFundamentalSequence` は κ=I(r,succ b)、b<λ の場合に
+c=succ b を明示的に使い、この開始位置での所属も証明する。
+すべての狭義増加基本列に i≤f(i) が成立することと、親の引数の正規性を用いる。
+κ が零引数や親の閉包に属すことを追加の前提にはしていない。
+
+`hasNormalSequence_successor_index_limit_tail` と `SequenceTerm.successorIndexLimitTail` は、
+既知の a の正規基本列を、b<cf(a)、a<κ の場合に ψκa へ移す。
+最小添字長は cf(a) のままであり、非可算共終数も扱える。
+
+## 零引数の一般的な添字の帰着
+
+`ZeroIndexNormalization.lean` の `ZeroIndex.exists_normal_index` は、
+任意の正規な正則添字項 k について、I(r,b) 型の部分項 j を選び、
+ψ(k,0)=ψ(j,0) と j∈C(0,ψ(j,0)) を同時に証明する。
+元の k の閉包所属は要求しない。
+
+`ZeroIndex.collapse_support` は、ψ(k,0) 以上かつ k 未満の正規項に、
+同じ区間に値を持つ ψ 部分項が存在すると示す。
+零引数の C では加法と I だけからこの区間に出られないことを利用する。
+`psi_zero_eq_of_collapse_between` により、その部分項の添字へ帰着しても零崩壊値は変わらない。
+帰着は項サイズを真に減らすため、順序数としての添字が増える場合でも停止する。
+
+`normalIndexPair` は証明された I 項のパラメータを選ぶ Lean の定義であり、
+`normalIndexPair_spec` が部分項性・正規性・正則性・閉包所属・値の一致を与える。
+`normalIndexPair_rank_smaller` は rank 項が元の添字項より真に小さいことを保証する。
+一般の非零引数に同じ帰着を適用できるとは主張していない。
+
+`hasNormalSequence_zero_collapse_induction` は、この帰着先の rank についての
+構造的帰納仮定を使い、零引数の正規基本列と最小添字長を構成する。
+すべての正規な正則添字についての零引数の帰納段階を扱うが、
+任意の rank 自身の基本列の存在までこの定理だけで得るわけではない。
+
+## 任意の引数での閉包所属を満たす表示への帰着
+
+`CollapseNormalization.lean` は、正規な ψκa で κ∉C(a,ψκa) の場合、
+より小さい正規 ψ 項で同じ値を表せることを `smaller_of_index_not_mem` で証明する。
+添字の中から、ψκa≤ψλb<κ となる ψ 部分項を取り出す。
+b≤a なら ψκa=ψλb、a≤b なら ψκa=ψλa として帰着する。
+前者では引数も変わるため、零引数用の添字の書き換えだけの一般化ではない。
+
+`psi_not_uncountableRegular` は ψ の値自身は非可算正則にならないことを、
+添字に関する冪等性と `psi_lt` から証明する。
+これと正規な和の性質により、正則添字を表す正規項は構文上も I 項である。
+
+`exists_proper` は項サイズによる整礎帰納法で、すべての正規な ψ 項を、
+添字と引数がともに自身の閉包に属する正規表示 ψ(I(r,b),a) へ帰着する。
+`normalize` はこの存在定理に基づく非計算的な定義である。
+`normalize_spec`、`normalize_normal`、`normalize_idempotent` は、
+閉包所属・値・サイズ上界・正規性・冪等性を保証する。
+`parameters_unique` はこの表示同士の rank・I の引数・ψ の引数の順序数値の一意性を示す。
+部分項の異なる綴りまで同一構文になるとは主張しない。
+
+`hasNormalSequence_collapse_of_index_not_mem` は添字所属の欠ける枝を、
+`hasNormalSequence_nonlimit_collapse_induction` は零・後続引数の枝全体を、
+小さい正規項への帰納仮定から処理する。どちらも親の値や引数の可算性を要求しない。
+`properLimitStep_iff_all_normal` は、残る極限枝の帰納段階 `ProperLimitStep` と、
+全正規項での最小長の正規基本列の存在が同値であると証明する。
+これは残る課題の形式的な帰着であり、`ProperLimitStep` 自体の証明ではない。
+この命題を公理や暗黙のインスタンスとして使ってはいない。
+
+## 添字未満の極限引数での一般の共終数
+
+`ProperLimitCofinality.lean` の `psi_limit_index_mem_at_stage` は、
+任意の順序数長の基本列について、親での添字所属がある一つの段階で成立すると示す。
+`psi_normal_limit_transfinite_tail` は、長さが加法的主項ならその段階からの尾部を
+ψ に写して実際の順序数の基本列を得る。a<κ と親の閉包所属を前提とする。
+
+`psi_proper_limit_isLimit` と `psi_proper_limit_cofinality` により、a が極限かつ a<κ、
+κ,a∈C(a,ψκa) なら ψκa も極限であり、cf(ψκa)=cf(a) となる。
+ここでの尾部の開始位置には正規表現を要求していない。
+この意味論上の等式を、非可算長の列の一般の正規形保存の証明と読み替えない。
+
 ## 証明済みの枝の統合
 
 `SequenceAssembly.lean` の `SequenceTerm` は、加法・I・証明済みの ψ の枝を
@@ -314,6 +396,9 @@ I(r,succ b) の零・後続引数を加える。`successorIndex` は零引数で
 添字未満の極限引数も扱う。`countableLimit` は親でのみ添字所属を要求する
 可算共終数の極限枝である。極限 rank を扱う構成では rank 自身の基本列も前提とする。
 それ以外の固定パラメータや加法の左辺には必要な正規性だけを要求する。
+`zeroCollapse` は添字内の I 部分項の rank についての列を受け取り、
+元の添字の閉包所属を要求せずに零引数を処理する。
+`SequenceTerm.normalizedCollapse` は、閉包所属を満たす表示で証明した列を元の項へ移す。
 
 `SequenceTerm.minimal_normal_sequence` は、この族の任意の極限項について、
 実際の共終数を添字長とする正規基本列の存在と、添字長の正規表現を証明する。
@@ -323,8 +408,9 @@ I(r,succ b) の零・後続引数を加える。`successorIndex` は零引数で
 共終数が ω の場合、`SequenceTerm.revised_fundamentalSequence` が ω 長（自然数添字）の従来の修正展開へ戻す。
 
 未処理の ψ の枝を仮定として済ませたり、`IsNormal` の定義をこの族に縮小したりしていない。
-親の閉包に添字が属さない一般の表示、零引数での添字所属を使えない
-非可算共終数の極限枝、添字以上の極限引数などが残る。
+添字所属の欠ける表示と零・後続引数の帰納段階は処理済みである。
+既知の条件で正規な尾部を選べない非可算共終数の極限枝、
+添字以上の極限引数など、`ProperLimitStep` の一般の証明が残る。
 
 任意の正規な親について `NormalFundamentalSequence` を構成する定理は未完了である。
 この仕様の導入や任意順序数の `intrinsicSequence_spec` を、その正規形保存の証明と
