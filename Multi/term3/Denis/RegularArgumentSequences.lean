@@ -164,6 +164,18 @@ theorem regularArgument_tail (s : Supply) (k r : O) (hk : RegularIndex s k) (hr 
     obtain ⟨n, hn⟩ := hx
     exact ⟨n, lt_of_lt_of_le hn (regularArgumentSeq_mono s k r (Nat.le_add_right n N))⟩
 
+theorem regularArgument_isLimit (s : Supply) (k r : O) (hk : RegularIndex s k) (hr : RegularIndex s r)
+    (hkr : k ≤ r) (hK : C s r (psi s k r) k) (hR : C s r (psi s k r) r) :
+    IsLimit (psi s k r) := by
+  obtain ⟨_, hf, _⟩ := regularArgument_tail s k r hk hr hkr hK hR
+  exact hf.isLimit
+
+theorem regularArgument_cofinality (s : Supply) (k r : O) (hk : RegularIndex s k) (hr : RegularIndex s r)
+    (hkr : k ≤ r) (hK : C s r (psi s k r) k) (hR : C s r (psi s k r) r) :
+    cofinality (psi s k r) (regularArgument_isLimit s k r hk hr hkr hK hR) = omega := by
+  obtain ⟨_, hf, _⟩ := regularArgument_tail s k r hk hr hkr hK hR
+  exact cofinality_eq_omega_of_fundamentalSequence hf
+
 end
 end OCF.Denis
 

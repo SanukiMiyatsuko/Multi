@@ -57,8 +57,10 @@ VERIFIED|T.Correspondence.epsilon_fundamentalSequence|Multi.term3.Term3Denis|pro
 VERIFIED|OCF.Denis.Expr.brecOn.eq|Multi.term3.Denis.Small|
 VERIFIED|T.fund.eq_1|Multi.term3.Term3Fundamental|propext,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revised_nested_successor_rank_zero_fundamentalSequence|Multi.term3.Denis.NestedIndex|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.regularArgument_isLimit|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.predTerm._sparseCasesOn_1.else_eq|Multi.term3.Denis.NormalSuccessors|propext
 VERIFIED|OCF.Denis.indexIter_sup_fixedpoint|Multi.term3.Denis.IndexIteration|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.CoveringSequenceTerm.brecOn|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.indexedSup.eq_1|Multi.term3.Denis.TransfiniteRules|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.C_zero_rankSup|Multi.term3.Denis.LimitRankSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.instDecidableEqTerm.decEq._proof_14|Multi.term3.Term3Correspondence|
@@ -76,11 +78,13 @@ VERIFIED|T.Correspondence.Denis.Covering.finiteTerm_leading|Multi.term3.Denis.Re
 VERIFIED|T.Correspondence.Denis.Covering.omega_dense|Multi.term3.Denis.RevisedCofinality|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.tower_isNormal|Multi.term3.Term3DenisNormal|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Denis.Source2019.0.T.Correspondence.Denis.Source2019.pred.match_4.eq_3|Multi.term3.Denis.Source2019|propext
+VERIFIED|T.Correspondence.Denis.Covering.regularArgumentIter_represented|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.finite_parameters_diagonal_dense|Multi.term3.Denis.RegularDiagonals|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.finite_lt_finite_iff|Multi.term3.Denis.Cofinality|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.instDecidableEqTerm.decEq._proof_20|Multi.term3.Term3Correspondence|
 VERIFIED|T.Correspondence.Denis.Covering.terms.eq_2|Multi.term3.Denis.Covering|
 VERIFIED|OCF.Denis.evaluate.eq_1|Multi.term3.Denis.WellDefined|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.CoveringFundamentalSequence.normalSequence|Multi.term3.Denis.NormalSequenceCoverage|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.direct_epsilon|Multi.term3.Term3Correspondence|propext,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_zero_collapse_induction|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.psi_le|Multi.term3.Denis.Collapse|propext,Classical.choice,Quot.sound
@@ -139,6 +143,7 @@ VERIFIED|T.mul.eq_1|Multi.term3.Term3Fundamental|propext
 VERIFIED|T.Correspondence.Denis.Covering.strictValue_lt_succ|Multi.term3.Denis.RevisedSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.one_isNormal|Multi.term3.Term3DenisNormal|propext,Classical.choice,Quot.sound
 VERIFIED|T.dom_omega_properties|Multi.term3.Term3Normal|
+VERIFIED|T.Correspondence.Denis.Covering.proper_regular_below_normalFundamentalSequence|Multi.term3.Denis.NormalStageInterpolation|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.Nested.Reduces.value_eq|Multi.term3.Denis.NestedNormalization|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_succ|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.two_bounded_below_limit|Multi.term3.Denis.Cofinality|propext,Classical.choice,Quot.sound
@@ -156,6 +161,7 @@ VERIFIED|T.Correspondence.Denis.Covering.nestedCollapse_value|Multi.term3.Denis.
 VERIFIED|T.Correspondence.Denis.obstructionTerm_isNormal|Multi.term3.Denis.SequenceObstruction|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.first_spec|Multi.term3.Denis.Cardinals|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.fund_collapseI|Multi.term3.Term3Correspondence|propext,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.HasCoveringSequence.to_normal|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.Stage.mk.injEq|Multi.term3.Denis.Collapse|propext
 VERIFIED|T.Correspondence.Denis.Covering.normal_leading_le|Multi.term3.Denis.NormalAddition|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.dom_collapseI|Multi.term3.Term3Correspondence|
@@ -169,12 +175,14 @@ VERIFIED|T.fund._unary._proof_4|Multi.term3.Term3Syntax|
 VERIFIED|T.Correspondence.uncountable.eq_1|Multi.term3.Term3Correspondence|
 VERIFIED|T.Correspondence.direct_collapseI|Multi.term3.Term3Correspondence|propext,Quot.sound
 VERIFIED|OCF.Denis.rankBounded_down|Multi.term3.Denis.RankBound|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.proper_composite_countable_dense|Multi.term3.Denis.CompositeLimitSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.collapseTree_diagonal_cofinality|Multi.term3.Denis.CollapseTrees|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.minimalDomainTerm._proof_1|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.SequenceTerm.revised_fundamentalSequence|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.ZeroIndex.Subterm.size_le|Multi.term3.Denis.ZeroIndexNormalization|propext,Quot.sound
 VERIFIED|T.Correspondence.Denis.epsilonSeq_fundamentalSequence|Multi.term3.Term3Denis|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Denis.Source2019.0.T.Correspondence.Denis.Source2019.lt.match_1.eq_11|Multi.term3.Denis.Source2019|propext
+VERIFIED|T.Correspondence.Denis.Covering.CoveringFundamentalSequence.shift|Multi.term3.Denis.NormalSequenceCoverage|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.psi.congr_simp|Multi.term3.Denis.WellDefined|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.SequenceTerm.normalizedCollapse|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.canonicalWellOrder._proof_1|Multi.term3.Denis.RevisedNormal|propext,Classical.choice,Quot.sound
@@ -212,6 +220,7 @@ VERIFIED|OCF.Denis.rank_zero_successor_index_succ_eq|Multi.term3.Denis.Successor
 VERIFIED|OCF.Denis.regular_no_shorter_cofinal|Multi.term3.Denis.Sequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.successorIndexBase_lt_index|Multi.term3.Denis.SuccessorIndexArguments|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.cofinality.congr_simp|Multi.term3.Denis.Cofinality|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.hasCoveringSequence_of_dense|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.successorRankZeroTerm_normal|Multi.term3.Denis.ZeroPlateau|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.normal_rankBounded|Multi.term3.Term3DenisOrder|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.ZeroIndex.Subterm.size_le._proof_1_2|Multi.term3.Denis.ZeroIndexNormalization|propext,Quot.sound
@@ -231,12 +240,14 @@ VERIFIED|T.Correspondence.Denis.normalOrdinalWellOrder._proof_1|Multi.term3.Term
 VERIFIED|T.Correspondence.Denis.Covering.IndexTree.collapseTree|Multi.term3.Denis.CollapseTrees|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.diagonalSeq_sup|Multi.term3.Denis.DiagonalSequence|propext,Classical.choice,Quot.sound
 VERIFIED|T.Dom.Ω.sizeOf_spec|Multi.term3.Term3Syntax|
+VERIFIED|T.Correspondence.Denis.Covering.normal_limit_index_interpolation|Multi.term3.Denis.IndexStageInterpolation|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.repeatAdd_add|Multi.term3.Denis.SuccessorSequence|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Term3Correspondence.0.T.Correspondence.iterate.match_1.eq_2|Multi.term3.Term3Correspondence|
 VERIFIED|OCF.Denis.psi_argument_normal_below|Multi.term3.Denis.SuccessorSequence|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.addTerm._sparseCasesOn_2.else_eq|Multi.term3.Denis.NormalAddition|propext
 VERIFIED|OCF.Denis.bounded_rank_zero_fundamentalSequence|Multi.term3.Denis.RankBound|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revised_finite_parameters_diagonal_fundamentalSequence|Multi.term3.Denis.RegularDiagonals|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.normal_regularIndex|Multi.term3.Denis.NormalStageInterpolation|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.C_zero_successor_index_bound|Multi.term3.Denis.SuccessorIndexSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.normalOrdinalWellOrder._proof_3|Multi.term3.Term3DenisOrder|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.one_isOT|Multi.term3.Term3Correspondence|propext
@@ -251,6 +262,7 @@ VERIFIED|_private.Multi.term3.Term3Fundamental.0.T.mul.match_1.eq_1|Multi.term3.
 VERIFIED|T.Correspondence.Denis.Covering.represented_I|Multi.term3.Denis.RevisedCofinality|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revised_successor_rank_normal_succ_fundamentalSequence|Multi.term3.Denis.SuccessorRankSequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.limit_rank_successor_index_zero_transfiniteFundamentalSequence|Multi.term3.Denis.SuccessorIndexSequences|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.psi_coveringFundamentalSequence|Multi.term3.Denis.NormalSequenceCoverage|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.indexIter_mono|Multi.term3.Denis.IndexIteration|propext,Classical.choice,Quot.sound
 VERIFIED|T.fund._unary._proof_1|Multi.term3.Term3Syntax|
 VERIFIED|OCF.Denis.C_successor_index_of_small_parameters|Multi.term3.Denis.SuccessorIndexSequences|propext,Classical.choice,Quot.sound
@@ -258,6 +270,7 @@ VERIFIED|T.Correspondence.Denis.epsilonSeq_zero|Multi.term3.Term3Correspondence|
 VERIFIED|OCF.Denis.next_spec|Multi.term3.Denis.Cardinals|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Term.psi.injEq|Multi.term3.Term3Correspondence|propext
 VERIFIED|T.Correspondence.Denis.Covering.dense_iff_revised_cofinal|Multi.term3.Denis.RevisedCofinality|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.represented_limit_add_interpolation|Multi.term3.Denis.NormalSequenceCoverage|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.obstructionBase_fixedpoint|Multi.term3.Denis.SequenceObstruction|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.CollapseNormalization.normalize_spec|Multi.term3.Denis.CollapseNormalization|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.inaccessible_down|Multi.term3.Denis.IndexLaws|propext,Classical.choice,Quot.sound
@@ -316,6 +329,7 @@ VERIFIED|T.Correspondence.Denis.Source2019.lt._sparseCasesOn_2.else_eq|Multi.ter
 VERIFIED|T.Correspondence.Denis.cardFixed_isNormal|Multi.term3.Denis.SequenceObstruction|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_successor_index_limit_tail|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.first_le|Multi.term3.Denis.Cardinals|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.properLimitStep_of_remaining|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.fund._unary._proof_2|Multi.term3.Term3Syntax|
 VERIFIED|T.Correspondence.read_fund_ofNat_succ|Multi.term3.Term3Denis|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.add_normalFundamentalSequence|Multi.term3.Denis.RevisedDomains|propext,Classical.choice,Quot.sound
@@ -328,6 +342,7 @@ VERIFIED|T.Correspondence.Denis.epsilonSeq_isNormal|Multi.term3.Term3DenisNormal
 VERIFIED|OCF.Denis.obstruction_base_not_below|Multi.term3.Denis.SequenceObstruction|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Term3Syntax.0.T.dom.match_1.eq_3|Multi.term3.Term3Syntax|
 VERIFIED|OCF.Denis.DiagonalSeed.growth|Multi.term3.Denis.SeededDiagonal|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.hasCoveringSequence_proper_limit_below|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.nestedCollapse_revised_agrees|Multi.term3.Denis.NestedIndex|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.addTerm.eq_def|Multi.term3.Denis.NormalAddition|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.obstructionTerm.eq_1|Multi.term3.Denis.Source2019|
@@ -351,6 +366,8 @@ VERIFIED|T.Correspondence.Denis.Covering.value_mono|Multi.term3.Denis.Covering|p
 VERIFIED|OCF.Denis.psi_bounded_of_postfixed|Multi.term3.Denis.SuccessorSequence|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.nextBound._proof_1|Multi.term3.Denis.WellDefined|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.psi_index_plateau|Multi.term3.Denis.CollapseUniqueness|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_proper_regular_argument|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.hasCoveringSequence_zero|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.C_mono_argument|Multi.term3.Denis.Collapse|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.tower_lt_sup|Multi.term3.Denis.EpsilonSequence|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Denis.NormalAddition.0.T.Correspondence.Denis.denote.match_1.eq_4|Multi.term3.Denis.NormalAddition|
@@ -371,6 +388,7 @@ VERIFIED|OCF.Denis.right_isLimit_of_add_isLimit|Multi.term3.Denis.FirstInterval|
 VERIFIED|T.Correspondence.direct.eq_1|Multi.term3.Term3Correspondence|
 VERIFIED|T.Correspondence.collapseI_sequence_zero_ne_ordinal|Multi.term3.Term3Denis|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.dom_uncountable|Multi.term3.Term3Correspondence|
+VERIFIED|T.Correspondence.Denis.Covering.I_coveringFundamentalSequence|Multi.term3.Denis.NormalSequenceCoverage|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.e.eq_def|Multi.term3.Denis.Source2019|
 VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_zero_collapse|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.successor_rank_small_presentation|Multi.term3.Denis.SuccessorRankClosure|propext,Classical.choice,Quot.sound
@@ -389,8 +407,10 @@ VERIFIED|OCF.Denis.diagonalIter_strict|Multi.term3.Denis.DiagonalSequence|propex
 VERIFIED|T.Correspondence.Denis.Covering.psi_first_I_limit_dense|Multi.term3.Denis.CountableTails|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.evaluate._proof_1|Multi.term3.Denis.WellDefined|propext
 VERIFIED|OCF.Denis.C_seeded_sup|Multi.term3.Denis.SeededDiagonal|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.coveringFundamentalSequence_of_omega|Multi.term3.Denis.NormalSequenceCoverage|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.rankTower_mono|Multi.term3.Denis.RankBound|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.lt.eq_3|Multi.term3.Denis.Source2019|propext,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.represented_limit_collapse_interpolation|Multi.term3.Denis.NormalStageInterpolation|propext,Classical.choice,Quot.sound
 VERIFIED|T.dom_omega_index_cases|Multi.term3.Term3Fundamental|
 VERIFIED|OCF.Denis.regularIndex_lower_bound|Multi.term3.Denis.Collapse|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.instDecidableEqTerm.decEq._proof_13|Multi.term3.Term3Correspondence|
@@ -421,7 +441,9 @@ VERIFIED|OCF.Denis.TransfiniteFundamentalSequence.mono|Multi.term3.Denis.Transfi
 VERIFIED|OCF.Denis.FundamentalSequence.transfinite|Multi.term3.Denis.Cofinality|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.indexIterFrom_sup_eq_psi_successor_rank_succ|Multi.term3.Denis.SuccessorRankSequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.psi_addPrincipal|Multi.term3.Denis.Sequences|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.normal_limit_collapse_interpolation._proof_1_2|Multi.term3.Denis.NormalStageInterpolation|propext,Quot.sound
 VERIFIED|OCF.Denis.identity_cofinalMap|Multi.term3.Denis.Cofinality|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.proper_normal_sum_countable_dense|Multi.term3.Denis.CompositeLimitSequences|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Denis.Source2019.0.T.Correspondence.Denis.Source2019.regular.match_1.eq_1|Multi.term3.Denis.Source2019|propext
 VERIFIED|_private.Multi.term3.Term3Syntax.0.T.dom.match_1.eq_1|Multi.term3.Term3Syntax|
 VERIFIED|T.Correspondence.Denis.Covering.addTerm._sparseCasesOn_1.else_eq|Multi.term3.Denis.NormalAddition|propext
@@ -487,9 +509,11 @@ VERIFIED|T.head_le|Multi.term3.Term3Normal|
 VERIFIED|OCF.Denis.psi_index_le_of_below_successor_rank|Multi.term3.Denis.SuccessorRankSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.normal_leading_principal|Multi.term3.Denis.NormalAddition|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.one.eq_1|Multi.term3.Term3Correspondence|
+VERIFIED|_private.Multi.term3.Denis.NormalStageInterpolation.0.T.Correspondence.Denis.Covering.combine_stages|Multi.term3.Denis.NormalStageInterpolation|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.first_succ_rank_zero_fundamentalSequence|Multi.term3.Denis.IndexIteration|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.successor_rank_successor_index_succ_fundamentalSequence|Multi.term3.Denis.SuccessorIndexArguments|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.e.eq_1|Multi.term3.Denis.Source2019|
+VERIFIED|OCF.Denis.regularArgumentSeq_sup|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.Expr.node.sizeOf_spec|Multi.term3.Denis.Small|
 VERIFIED|T.Correspondence.Denis.cardFixedSeq_zero|Multi.term3.Term3Correspondence|
 VERIFIED|OCF.Denis.indexIterFrom_lt_succ|Multi.term3.Denis.SuccessorRankSequences|propext,Classical.choice,Quot.sound
@@ -507,6 +531,7 @@ VERIFIED|T.Correspondence.Denis.denote.eq_def|Multi.term3.Denis.NormalAddition|p
 VERIFIED|OCF.Denis.finite_map_bounded|Multi.term3.Denis.Cofinality|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.denote_iterate_exp|Multi.term3.Term3Denis|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.denote.congr_simp|Multi.term3.Denis.Covering|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.CoveringFundamentalSequence.cofinal_normal|Multi.term3.Denis.NormalSequenceCoverage|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.psi_limit_index_mem_at_stage|Multi.term3.Denis.ProperLimitCofinality|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Denis.Source2019.0.T.Correspondence.Denis.Source2019.lt.match_1.eq_1|Multi.term3.Denis.Source2019|propext
 VERIFIED|T.fund._unary._proof_13|Multi.term3.Term3Syntax|
@@ -530,7 +555,9 @@ VERIFIED|OCF.Denis.Expr.splitZero._proof_1|Multi.term3.Denis.Small|
 VERIFIED|OCF.Denis.cofinality_eq_of_transfiniteFundamentalSequence|Multi.term3.Denis.TransfiniteRules|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.lt._unary._proof_10|Multi.term3.Denis.Source2019|propext,Quot.sound
 VERIFIED|OCF.Denis.small_expr|Multi.term3.Denis.Small|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.regularArgumentIter_strict|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revised_normalFundamentalSequence|Multi.term3.Denis.RevisedDomains|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.regularArgumentIter_mem_at_stage|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.NormalFundamentalSequence.minimal|Multi.term3.Denis.RevisedDomains|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_nonlimit_collapse_induction|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.instDecidableEqTerm.decEq._proof_3|Multi.term3.Term3Correspondence|
@@ -541,9 +568,11 @@ VERIFIED|OCF.Denis.first_lt_finite_parameters._proof_1_1|Multi.term3.Denis.Regul
 VERIFIED|T.Correspondence.Denis.Covering.SequenceTerm.hasNormalSequence|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.Expr.node.inj|Multi.term3.Denis.Small|
 VERIFIED|OCF.Denis.evaluate.eq_def|Multi.term3.Denis.WellDefined|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.proper_normal_I_countable_dense|Multi.term3.Denis.CompositeLimitSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.IndexTree.normal|Multi.term3.Denis.IndexTrees|propext,Classical.choice,Quot.sound
 VERIFIED|T.mul_lt_P|Multi.term3.Term3Fundamental|propext
 VERIFIED|T.Correspondence.Denis.iterate_collapseI_isNormal|Multi.term3.Term3DenisNormal|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.regularArgumentIter_mem|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.add_isLimit|Multi.term3.Denis.NormalSuccessors|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revised_successor_rank_zero_normalFundamentalSequence|Multi.term3.Denis.RevisedDomains|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.regularIndex_regular|Multi.term3.Denis.Cardinals|propext,Classical.choice,Quot.sound
@@ -557,6 +586,7 @@ VERIFIED|T.Correspondence.fund_omega|Multi.term3.Term3Correspondence|propext,Quo
 VERIFIED|T.Correspondence.Denis.Covering.collapseTree_diagonal_dense|Multi.term3.Denis.CollapseTrees|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.Expr.leaf.sizeOf_spec|Multi.term3.Denis.Small|
 VERIFIED|OCF.Denis.psi_first_successor_eq_repeat_sup|Multi.term3.Denis.SuccessorSequence|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.regularArgumentIter_mono|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.collapseI_sequence_shift_one_ne|Multi.term3.Term3Correspondence|propext,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revised_collapseI_fundamentalSequence|Multi.term3.Denis.RevisedCofinality|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.SequenceTerm.normal|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
@@ -569,6 +599,7 @@ VERIFIED|T.Correspondence.Denis.Covering.revised_successor_rank_zero_fundamental
 VERIFIED|T.Correspondence.Denis.Source2019.lt._unary._proof_9|Multi.term3.Denis.Source2019|propext,Quot.sound
 VERIFIED|instStrict_partial_orderT|Multi.term3.Term3Syntax|
 VERIFIED|T.Correspondence.Denis.Covering.NormalFundamentalSequence.omega_dense|Multi.term3.Denis.RevisedDomains|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.C_normal_sum_head|Multi.term3.Denis.CompositeLimitSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revised_normal_below_first_diagonal_fundamentalSequence|Multi.term3.Denis.FirstInterval|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.successor_rank_limit_normalFundamentalSequence|Multi.term3.Denis.SuccessorRankSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.instDecidableEqDom.decEq._proof_4|Multi.term3.Term3Syntax|
@@ -591,6 +622,7 @@ VERIFIED|T.mem_G₂_properties|Multi.term3.Term3Normal|propext
 VERIFIED|T.Correspondence.Denis.Covering.Nested.normalized_fundamentalSequence_iff|Multi.term3.Denis.NestedNormalization|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.intrinsicSequence_spec|Multi.term3.Denis.Cofinality|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.denote_minimalDomainTerm|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.regularArgumentIter_below|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.size_lt_size_P_third|Multi.term3.Term3Syntax|
 VERIFIED|OCF.Denis.FundamentalSequence.isLimit|Multi.term3.Denis.Sequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.DiagonalSeed.argument|Multi.term3.Denis.SeededDiagonal|propext,Classical.choice,Quot.sound
@@ -612,6 +644,7 @@ VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_add|Multi.term3.Denis
 VERIFIED|OCF.Denis.tower_sup_eq_psi_first_first|Multi.term3.Denis.EpsilonSequence|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.C_predecessor|Multi.term3.Denis.ClosureSubterms|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.obstructionIndex_regular|Multi.term3.Denis.SequenceObstruction|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_I_argument|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.lt.eq_9|Multi.term3.Denis.Source2019|propext,Quot.sound
 VERIFIED|OCF.Denis.I_succ_lt_rankSuccSup|Multi.term3.Denis.LimitRankSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.termOf._proof_1|Multi.term3.Denis.RevisedNormal|propext,Classical.choice,Quot.sound
@@ -625,7 +658,9 @@ VERIFIED|OCF.Denis.StageClosure.brecOn|Multi.term3.Denis.Collapse|propext,Classi
 VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_first_collapse|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.normal_index_parameters_unique|Multi.term3.Term3DenisOrder|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.denote_finiteTerm._proof_1_1|Multi.term3.Denis.RevisedCofinality|propext,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.proper_I_countable_dense|Multi.term3.Denis.CompositeLimitSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Dom.One.sizeOf_spec|Multi.term3.Term3Syntax|
+VERIFIED|T.Correspondence.Denis.Covering.normal_suffix_represented|Multi.term3.Denis.NormalSequenceCoverage|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.collapseISeq_fundamentalSequence|Multi.term3.Term3Denis|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.I1_OT|Multi.term3.Denis.Source2019|propext,Quot.sound
 VERIFIED|T.Correspondence.cardFixed_not_isOT|Multi.term3.Term3Correspondence|propext,Quot.sound
@@ -635,6 +670,7 @@ VERIFIED|OCF.Denis.Stage.mk.inj|Multi.term3.Denis.Collapse|
 VERIFIED|OCF.Denis.composite_eventual_argument_normal._proof_1_2|Multi.term3.Denis.CountableTails|propext,Quot.sound
 VERIFIED|T.fund._unary._proof_9|Multi.term3.Term3Syntax|
 VERIFIED|OCF.Denis.omega_le_cofinality|Multi.term3.Denis.Cofinality|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.regularArgument_tail._proof_1_3|Multi.term3.Denis.RegularArgumentSequences|propext,Quot.sound
 VERIFIED|_private.Multi.term3.Denis.NestedIndex.0.T.Correspondence.Denis.Covering.succTerm.match_1.eq_2|Multi.term3.Denis.NestedIndex|propext
 VERIFIED|T.Correspondence.Denis.Source2019.pred.eq_3|Multi.term3.Denis.Source2019|propext
 VERIFIED|T.Correspondence.Denis.Covering.revised_limit_cofinal_among_normal|Multi.term3.Denis.RevisedNormal|propext,Classical.choice,Quot.sound
@@ -642,7 +678,9 @@ VERIFIED|OCF.Denis.closureCounterValue_mem|Multi.term3.Denis.ClosureCounterexamp
 VERIFIED|T.Correspondence.Denis.Covering.denote_addTerm|Multi.term3.Denis.NormalAddition|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.I_successor_gap|Multi.term3.Denis.SuccessorIndexSequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.I_lower_rank_closed|Multi.term3.Denis.IndexLaws|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.proper_limit_below_coveringFundamentalSequence|Multi.term3.Denis.NormalSequenceCoverage|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.base_lt_closureCounterIndex|Multi.term3.Denis.ClosureCounterexample|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.add_coveringFundamentalSequence|Multi.term3.Denis.NormalSequenceCoverage|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.omega_isOT|Multi.term3.Term3Correspondence|propext
 VERIFIED|T.Correspondence.Denis.Covering.normalLimit_of_no_predecessor|Multi.term3.Denis.RevisedSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.isNF.brecOn|Multi.term3.Term3Normal|
@@ -673,6 +711,7 @@ VERIFIED|T.fund._unary._proof_16|Multi.term3.Term3Syntax|
 VERIFIED|OCF.Denis.psi_first_successor_fundamentalSequence|Multi.term3.Denis.SuccessorSequence|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.leading_succTerm|Multi.term3.Denis.NormalSuccessors|propext
 VERIFIED|T.Correspondence.Denis.Covering.revisedValue_limit|Multi.term3.Denis.RevisedSequences|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.normal_limit_collapse_interpolation._proof_1_1|Multi.term3.Denis.NormalStageInterpolation|propext,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.minimalStepTerm_normal|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.canonical_denote_injective|Multi.term3.Denis.RevisedNormal|propext,Classical.choice,Quot.sound
 VERIFIED|T.decLt._proof_4|Multi.term3.Term3Syntax|
@@ -705,6 +744,7 @@ VERIFIED|T.Correspondence.Denis.Covering.normalApproximation_pair|Multi.term3.De
 VERIFIED|lt_Z_Z_inv|Multi.term3.Term3Syntax|
 VERIFIED|T.Correspondence.Denis.Covering.Nested.normalize_spec|Multi.term3.Denis.NestedNormalization|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.epsilon.eq_1|Multi.term3.Term3Correspondence|
+VERIFIED|T.Correspondence.Denis.Covering.normal_limit_collapse_interpolation|Multi.term3.Denis.NormalStageInterpolation|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.seededIter_represented|Multi.term3.Denis.SeededDiagonal|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revised_psi_first_successor_fundamentalSequence|Multi.term3.Denis.SuccessorSequence|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.Nested.Irreducible.congr_simp|Multi.term3.Denis.NestedNormalization|propext,Classical.choice,Quot.sound
@@ -728,9 +768,11 @@ VERIFIED|T.Correspondence.Denis.Covering.closureCounterIndex_represented|Multi.t
 VERIFIED|OCF.Denis.C_zero_below_first|Multi.term3.Denis.Collapse|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.le_maxOrdinal_left|Multi.term3.Denis.Covering|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.rankSup_add_closed|Multi.term3.Denis.LimitRankSequences|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.hasCoveringSequence_I|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.epsilon_sequence_zero_ne|Multi.term3.Term3Correspondence|propext,Quot.sound
 VERIFIED|OCF.Denis.C_succ_successor_index_bound|Multi.term3.Denis.SuccessorIndexArguments|propext,Classical.choice,Quot.sound
 VERIFIED|T.dom_omega_size|Multi.term3.Term3Syntax|
+VERIFIED|OCF.Denis.C_regularArgument_sup|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Term3Syntax.0.T.fund.match_1.eq_1|Multi.term3.Term3Syntax|
 VERIFIED|T.Correspondence.Denis.Covering.revised_cofinality|Multi.term3.Denis.RevisedDomains|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.read_epsilon|Multi.term3.Term3Denis|propext,Classical.choice,Quot.sound
@@ -776,12 +818,14 @@ VERIFIED|T.Correspondence.Denis.Covering.candidate_lt|Multi.term3.Denis.Covering
 VERIFIED|OCF.Denis.seededIter_strict|Multi.term3.Denis.SeededDiagonal|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.seeded_fundamentalSequence|Multi.term3.Denis.SeededDiagonal|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.TransfiniteFundamentalSequence.strict|Multi.term3.Denis.Sequences|propext
+VERIFIED|T.Correspondence.Denis.Covering.regular_coveringFundamentalSequence|Multi.term3.Denis.NormalSequenceCoverage|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.finite_lt_omega|Multi.term3.Denis.Cardinals|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.fund_epsilon|Multi.term3.Term3Correspondence|propext,Quot.sound
 VERIFIED|OCF.Denis.composite_eventual_argument_normal|Multi.term3.Denis.CountableTails|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.tower_fundamentalSequence|Multi.term3.Denis.EpsilonSequence|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revisedValue_covers|Multi.term3.Denis.RevisedSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.normalOrdinalWellOrder._proof_2|Multi.term3.Term3DenisOrder|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.proper_index_mem_at_represented_stage|Multi.term3.Denis.NormalStageInterpolation|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.psi_first_one_strict|Multi.term3.Denis.Collapse|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.Nested.normalize.eq_1|Multi.term3.Denis.NestedNormalization|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.terms_complete|Multi.term3.Denis.Covering|propext,Quot.sound
@@ -790,6 +834,7 @@ VERIFIED|T.Correspondence.collapseI_isOT|Multi.term3.Term3Correspondence|propext
 VERIFIED|T.Correspondence.Denis.instDecidableEqTerm.decEq._proof_11|Multi.term3.Term3Correspondence|
 VERIFIED|T.Correspondence.Denis.Covering.NormalFundamentalSequence.fundamental|Multi.term3.Denis.RevisedDomains|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.I_addPrincipal|Multi.term3.Denis.IndexLaws|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.regularArgument_tail._proof_1_1|Multi.term3.Denis.RegularArgumentSequences|propext,Quot.sound
 VERIFIED|T.Correspondence.card_lt_inaccessible|Multi.term3.Term3Correspondence|
 VERIFIED|T.Correspondence.Denis.Covering.successorRankCollapseTerm_normal|Multi.term3.Denis.CollapseTrees|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.obstruction_I_base_not_below|Multi.term3.Denis.SequenceObstruction|propext,Classical.choice,Quot.sound
@@ -807,9 +852,11 @@ VERIFIED|OCF.Denis.rankSuccSup_I_closed|Multi.term3.Denis.LimitRankSequences|pro
 VERIFIED|T.Correspondence.Denis.Covering.nestedCollapse_replacement_smaller._proof_1_6|Multi.term3.Denis.NestedIndex|propext,Quot.sound
 VERIFIED|OCF.Denis.C_successor_rank_below_parameters|Multi.term3.Denis.SuccessorRankClosure|propext,Classical.choice,Quot.sound
 VERIFIED|T.G₁.eq_1|Multi.term3.Term3Normal|
+VERIFIED|OCF.Denis.regularArgument_cofinality|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.successor_rank_successor_index_zero_eq|Multi.term3.Denis.SuccessorIndexSequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.psi_spec|Multi.term3.Denis.WellDefined|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.lt._unary._proof_3|Multi.term3.Denis.Source2019|propext,Quot.sound
+VERIFIED|OCF.Denis.regularArgumentIter_le_next|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.Nested.Step.congr_simp|Multi.term3.Denis.NestedNormalization|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Denis.NormalAddition.0.T.Correspondence.Denis.denote.match_1.eq_3|Multi.term3.Denis.NormalAddition|
 VERIFIED|T.Correspondence.Denis.Term.leading.eq_1|Multi.term3.Denis.Source2019|propext
@@ -858,6 +905,7 @@ VERIFIED|T.Correspondence.Denis.Covering.NormalFundamentalSequence.normal|Multi.
 VERIFIED|T.Correspondence.Denis.obstructionIndexTerm.eq_1|Multi.term3.Denis.Source2019|
 VERIFIED|T.Correspondence.Denis.denote.eq_2|Multi.term3.Denis.NormalAddition|propext,Classical.choice,Quot.sound
 VERIFIED|T.dom.eq_def|Multi.term3.Term3Syntax|
+VERIFIED|T.Correspondence.Denis.Covering.hasCoveringSequence_of_minimal|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Term3Correspondence.0.T.Correspondence.iterate.match_1.eq_1|Multi.term3.Term3Correspondence|
 VERIFIED|OCF.Denis.TransfiniteFundamentalSequence.index_le_value|Multi.term3.Denis.TransfiniteTails|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.not_dense_of_uncountable_cofinality|Multi.term3.Denis.RevisedDomains|propext,Classical.choice,Quot.sound
@@ -885,6 +933,8 @@ VERIFIED|OCF.Denis.C_normal_index_parameters|Multi.term3.Denis.ClosureSubterms|p
 VERIFIED|T.instDecidableEqDom.decEq._proof_15|Multi.term3.Term3Syntax|
 VERIFIED|OCF.Denis.indexIterFrom_sup_lt_first_succ_rank|Multi.term3.Denis.SuccessorRankSequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.successorIndexBase_succ_mem|Multi.term3.Denis.SuccessorIndexArguments|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.C_principal_of_lt_repeat|Multi.term3.Denis.CompositeLimitSequences|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.hasCoveringSequence_add|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.advance_exists|Multi.term3.Denis.RevisedSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.lt.eq_1|Multi.term3.Denis.Source2019|propext,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.lt._unary._proof_4|Multi.term3.Denis.Source2019|propext,Quot.sound
@@ -907,6 +957,7 @@ VERIFIED|T.Correspondence.Denis.Covering.finiteTerm_normal._proof_1_1|Multi.term
 VERIFIED|_private.Multi.term3.Denis.Small.0.OCF.Denis.Expr.splitSucc.match_1.eq_3|Multi.term3.Denis.Small|
 VERIFIED|T.lt_total|Multi.term3.Term3Syntax|
 VERIFIED|T.Correspondence.Denis.Covering.advance_spec|Multi.term3.Denis.RevisedSequences|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.regularArgumentSeq_mono|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Term.leading.eq_2|Multi.term3.Denis.Source2019|propext
 VERIFIED|T.Correspondence.Denis.Covering.IndexTree.brecOn|Multi.term3.Denis.IndexTrees|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.lt.eq_11|Multi.term3.Denis.Source2019|propext,Quot.sound
@@ -916,9 +967,11 @@ VERIFIED|OCF.Denis.repeatAdd_lt_regular|Multi.term3.Denis.SuccessorSequence|prop
 VERIFIED|T.Correspondence.Denis.Covering.revised_limit_strict|Multi.term3.Denis.RevisedNormal|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.star.eq_1|Multi.term3.Denis.Source2019|propext,Quot.sound
 VERIFIED|OCF.Denis.first_lt_psi_above|Multi.term3.Denis.DiagonalSequence|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.hasCoveringSequence_succ|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Term3Syntax.0.T.dom.match_1.eq_4|Multi.term3.Term3Syntax|
 VERIFIED|T.instDecidableEqDom.decEq._proof_13|Multi.term3.Term3Syntax|
 VERIFIED|T.mul.eq_2|Multi.term3.Term3Fundamental|propext
+VERIFIED|T.Correspondence.Denis.Covering.hasCoveringSequence_regular|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.first_le_psi_successor_index|Multi.term3.Denis.SuccessorIndexSequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.repeatAdd_strict|Multi.term3.Denis.SuccessorSequence|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.ZeroIndex.Subterm.brecOn|Multi.term3.Denis.ZeroIndexNormalization|
@@ -953,10 +1006,12 @@ VERIFIED|OCF.Denis.psi_proper_limit_cofinality|Multi.term3.Denis.ProperLimitCofi
 VERIFIED|OCF.Denis.indexIter_lt_sup|Multi.term3.Denis.IndexIteration|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.closureCounter_normalization|Multi.term3.Denis.ClosureCounterexample|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.C_add|Multi.term3.Denis.Collapse|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.properRemainingLimitStep_iff_all_normal|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.C_collapse_argument_lt|Multi.term3.Denis.CollapseUniqueness|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Denis.Source2019.0.T.Correspondence.Denis.Source2019.repeatTerm.match_1.eq_1|Multi.term3.Denis.Source2019|
 VERIFIED|T.Correspondence.ofNat_isOT|Multi.term3.Term3Correspondence|propext,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.normalLimit_no_predecessor|Multi.term3.Denis.RevisedSequences|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.represented_limit_index_interpolation|Multi.term3.Denis.IndexStageInterpolation|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.repeatAdd.eq_def|Multi.term3.Denis.SuccessorSequence|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.regular_normalFundamentalSequence|Multi.term3.Denis.RevisedDomains|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revised_normalized_collapseTree_diagonal_fundamentalSequence|Multi.term3.Denis.CollapseTrees|propext,Classical.choice,Quot.sound
@@ -978,6 +1033,7 @@ VERIFIED|T.Correspondence.Denis.Covering.normal_dense_below_first_diagonal|Multi
 VERIFIED|instDecidableEqT.decEq._proof_7|Multi.term3.Term3Syntax|
 VERIFIED|T.Correspondence.Denis.Source2019.lt.eq_2|Multi.term3.Denis.Source2019|propext,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.ruleFive_counterexample|Multi.term3.Denis.Source2019|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.combine_represented_stages|Multi.term3.Denis.IndexStageInterpolation|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.psi_fundamentalSequence|Multi.term3.Denis.Sequences|propext,Classical.choice,Quot.sound
 VERIFIED|instDecidableEqT.decEq._proof_2|Multi.term3.Term3Syntax|
 VERIFIED|OCF.Denis.psi_index_le_of_below_first_rank|Multi.term3.Denis.LimitRankSequences|propext,Classical.choice,Quot.sound
@@ -985,6 +1041,7 @@ VERIFIED|T.Correspondence.Denis.denote_indexIterTerm|Multi.term3.Term3DenisOrder
 VERIFIED|T.Correspondence.Denis.Source2019.repeatTerm.eq_def|Multi.term3.Denis.Source2019|
 VERIFIED|OCF.Denis.least_le|Multi.term3.Denis.Cardinals|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revised_succ_eq|Multi.term3.Denis.NormalSuccessors|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.hasCoveringSequence_of_countable|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_successor_index_succ|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.tower_sup_lt_first|Multi.term3.Denis.EpsilonSequence|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.successorRankCollapseTerm_normal_of_mem|Multi.term3.Denis.CollapseTrees|propext,Classical.choice,Quot.sound
@@ -995,6 +1052,7 @@ VERIFIED|T.Correspondence.Denis.normal_index_ne_collapse|Multi.term3.Term3DenisO
 VERIFIED|T.Correspondence.Denis.Covering.normal_interpolation|Multi.term3.Denis.NormalInterpolation|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.finite_parameters_diagonal_dense._proof_1_1|Multi.term3.Denis.RegularDiagonals|propext,Quot.sound
 VERIFIED|OCF.Denis.rankSup_I_closed|Multi.term3.Denis.LimitRankSequences|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.I_limit_le_of_forall|Multi.term3.Denis.IndexStageInterpolation|propext,Classical.choice,Quot.sound
 VERIFIED|T.fund_lt_of_domain|Multi.term3.Term3Fundamental|propext,Quot.sound
 VERIFIED|OCF.Denis.diagonal_fundamentalSequence|Multi.term3.Denis.DiagonalSequence|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.rank_le_first|Multi.term3.Denis.IndexLaws|propext,Classical.choice,Quot.sound
@@ -1002,6 +1060,7 @@ VERIFIED|T.Correspondence.direct_one_tail|Multi.term3.Term3Correspondence|propex
 VERIFIED|OCF.Denis.first_rank_strict|Multi.term3.Denis.IndexLaws|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.successor_rank_normal_succ_cofinality|Multi.term3.Denis.SuccessorRankSequences|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Denis.WellDefined.0.OCF.Denis.evaluate.match_1.eq_2|Multi.term3.Denis.WellDefined|Classical.choice
+VERIFIED|OCF.Denis.regularArgument_tail|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_successor_index_zero|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.psi_closed|Multi.term3.Denis.Collapse|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.successor_rank_successor_index_zero_fundamentalSequence|Multi.term3.Denis.SuccessorIndexSequences|propext,Classical.choice,Quot.sound
@@ -1013,6 +1072,8 @@ VERIFIED|T.size_lt_size_P_fourth|Multi.term3.Term3Syntax|
 VERIFIED|OCF.Denis.rankBounded_zero|Multi.term3.Denis.RankBound|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.denote_cardFixed|Multi.term3.Denis.SequenceObstruction|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.cofinality._proof_1|Multi.term3.Denis.Cofinality|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.proper_sum_countable_dense|Multi.term3.Denis.CompositeLimitSequences|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.psi_bounded_of_postfixed_le|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.omega.eq_1|Multi.term3.Denis.Cardinals|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Denis.Small.0.OCF.Denis.Expr.splitZero.match_1.eq_3|Multi.term3.Denis.Small|
 VERIFIED|T.Correspondence.read_zero|Multi.term3.Term3Denis|propext,Classical.choice,Quot.sound
@@ -1023,6 +1084,7 @@ VERIFIED|T.brecOn.eq|Multi.term3.Term3Syntax|
 VERIFIED|T.Correspondence.Denis.Covering.normal_hasNormalSequence_of_proper_limit|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.mem_terms_succ|Multi.term3.Denis.Covering|
 VERIFIED|T.Correspondence.Denis.Covering.value_represented|Multi.term3.Denis.Covering|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.proper_regular_argument_dense|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|_private.Multi.term3.Denis.Source2019.0.T.Correspondence.Denis.Source2019.e.match_1.eq_4|Multi.term3.Denis.Source2019|
 VERIFIED|T.Correspondence.Denis.Source2019.lt.eq_4|Multi.term3.Denis.Source2019|propext,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.Nested.normalize_normal|Multi.term3.Denis.NestedNormalization|propext,Classical.choice,Quot.sound
@@ -1067,6 +1129,7 @@ VERIFIED|T.Correspondence.fund_ofNat_succ|Multi.term3.Term3Correspondence|propex
 VERIFIED|T.instDecidableEqDom.decEq._proof_6|Multi.term3.Term3Syntax|
 VERIFIED|_private.Multi.term3.Denis.Small.0.OCF.Denis.Expr.splitZero.match_1.eq_2|Multi.term3.Denis.Small|
 VERIFIED|T.Correspondence.Denis.Source2019.obstructionIndex_successor|Multi.term3.Denis.Source2019|propext
+VERIFIED|OCF.Denis.principal_eq_of_between_repeat|Multi.term3.Denis.CompositeLimitSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.fund._unary._proof_12|Multi.term3.Term3Syntax|
 VERIFIED|OCF.Denis.index_eq_first_of_psi_lt_first|Multi.term3.Denis.EpsilonSequence|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revised_zero_plateau_fundamentalSequence|Multi.term3.Denis.ZeroPlateau|propext,Classical.choice,Quot.sound
@@ -1096,6 +1159,7 @@ VERIFIED|T.Correspondence.Denis.denote_obstructionIndexTerm|Multi.term3.Denis.Se
 VERIFIED|T.Correspondence.Denis.instDecidableEqTerm.decEq._proof_9|Multi.term3.Term3Correspondence|
 VERIFIED|T.fund._unary.eq_def|Multi.term3.Term3Syntax|propext,Quot.sound
 VERIFIED|OCF.Denis.C_zero|Multi.term3.Denis.Collapse|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.regularArgumentSeq_below|Multi.term3.Denis.RegularArgumentSequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.predTerm_normal|Multi.term3.Denis.NormalSuccessors|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.first_lt_finite_parameters|Multi.term3.Denis.RegularDiagonals|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.C.congr_simp|Multi.term3.Denis.NestedNormalization|propext,Classical.choice,Quot.sound
@@ -1142,6 +1206,7 @@ VERIFIED|OCF.Denis.Expr.splitZero.eq_1|Multi.term3.Denis.Small|
 VERIFIED|T.G₁.eq_2|Multi.term3.Term3Normal|
 VERIFIED|T.Correspondence.Denis.instDecidableEqTerm.decEq._proof_7|Multi.term3.Term3Correspondence|
 VERIFIED|OCF.Denis.repeatAdd_sup_addPrincipal|Multi.term3.Denis.SuccessorSequence|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.hasCoveringSequence_proper_regular_argument|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.psi_normal_limit_transfinite_tail|Multi.term3.Denis.ProperLimitCofinality|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.properLimitStep_iff_all_normal|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.obstructionIndexTerm_OT|Multi.term3.Denis.Source2019|propext,Quot.sound
@@ -1170,10 +1235,12 @@ VERIFIED|OCF.Denis.psi_first_zero_strict|Multi.term3.Denis.Collapse|propext,Clas
 VERIFIED|T.Correspondence.Denis.successor_rank_zero_fundamentalSequence|Multi.term3.Term3DenisOrder|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.seededSeq_sup|Multi.term3.Denis.SeededDiagonal|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.first_rank_index_mem|Multi.term3.Denis.LimitRankSequences|propext,Classical.choice,Quot.sound
+VERIFIED|OCF.Denis.regularArgument_tail._proof_1_2|Multi.term3.Denis.RegularArgumentSequences|propext,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.ZeroIndex.Subterm.normal|Multi.term3.Denis.ZeroIndexNormalization|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Source2019.lt._unary._proof_17|Multi.term3.Denis.Source2019|propext,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.Nested.Step.normal|Multi.term3.Denis.NestedNormalization|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.psi_first_successor_dense|Multi.term3.Denis.SuccessorSequence|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_regular_argument|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.I_dense_of_normal_sequence|Multi.term3.Denis.RevisedCofinality|propext,Classical.choice,Quot.sound
 VERIFIED|lt_inv|Multi.term3.Term3Syntax|
 VERIFIED|OCF.Denis.stages_eq|Multi.term3.Denis.Collapse|propext,Classical.choice,Quot.sound
@@ -1208,18 +1275,21 @@ VERIFIED|T.Correspondence.Denis.Covering.limit_rank_zero_normalFundamentalSequen
 VERIFIED|OCF.Denis.regular_succ_lt|Multi.term3.Denis.Sequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.psi_zero_below_first|Multi.term3.Denis.Collapse|propext,Classical.choice,Quot.sound
 VERIFIED|T.first_lt|Multi.term3.Term3Normal|
+VERIFIED|T.Correspondence.Denis.Covering.NormalFundamentalSequence.congr_simp|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.CollapseNormalization.normalize_of_proper|Multi.term3.Denis.CollapseNormalization|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.mul_one_ofNat|Multi.term3.Term3Correspondence|propext
 VERIFIED|T.Correspondence.Denis.Covering.represented_add|Multi.term3.Denis.NormalAddition|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.canonicalWellOrder._proof_3|Multi.term3.Denis.RevisedNormal|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.revisedStep._proof_1|Multi.term3.Denis.RevisedSequences|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.regular_add_closed|Multi.term3.Denis.Sequences|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.hasNormalSequence_sum_argument|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.cofinality_addPrincipal|Multi.term3.Denis.TransfiniteTails|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.next.congr_simp|Multi.term3.Denis.Collapse|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.indexIterFrom_lt_sup|Multi.term3.Denis.SuccessorRankSequences|propext,Classical.choice,Quot.sound
+VERIFIED|T.Correspondence.Denis.Covering.CoveringSequenceTerm.hasCoveringSequence|Multi.term3.Denis.SequenceAssembly|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.succ_lt_limit|Multi.term3.Denis.Sequences|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.CollapseNormalization.Proper.congr_simp|Multi.term3.Denis.CollapseNormalization|propext,Classical.choice,Quot.sound
 VERIFIED|OCF.Denis.right_is_succ_of_add_succ|Multi.term3.Denis.NormalSuccessors|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.Covering.diagonal_dense|Multi.term3.Denis.RegularDiagonals|propext,Classical.choice,Quot.sound
 VERIFIED|T.Correspondence.Denis.obstructionIndexTerm_isNormal|Multi.term3.Denis.SequenceObstruction|propext,Classical.choice,Quot.sound
-Audited 1752 Term3 declarations; no sorryAx or new axioms.
+Audited 1832 Term3 declarations; no sorryAx or new axioms.

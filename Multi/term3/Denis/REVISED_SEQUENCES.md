@@ -386,6 +386,97 @@ b≤a なら ψκa=ψλb、a≤b なら ψκa=ψλa として帰着する。
 ここでの尾部の開始位置には正規表現を要求していない。
 この意味論上の等式を、非可算長の列の一般の正規形保存の証明と読み替えない。
 
+## 崩壊添字以上の正則引数
+
+`RegularArgumentSequences.lean` は κ≤R、κ,R が正則添字、
+κ,R∈C(R,ψκR) の場合に、
+
+```
+f₀ = 0
+fₙ₊₁ = ψR(fₙ)
+gₙ = ψκ(fₙ)
+```
+
+を使う。`regularArgumentSeq_sup` は sup g=ψκR を証明する。
+`regularArgument_tail` は有限の N を構成し、gₙ₊N の基本列の3性質と
+引数の閉包所属を証明する。必要な N は親の閉包所属から導かれ、
+任意の正規開始項の存在を追加の仮定にしていない。
+`proper_regular_argument_dense` が各項の正規表現を保証する。
+`regularArgument_cofinality` により最小添字長は ω である。
+κ=R も含み、外側の添字を最初の正則添字 Ω に限定しない。
+
+## 任意の正則添字と可算尾部を持つ複合引数
+
+`CompositeLimitSequences.lean` の `proper_composite_countable_dense` は、
+引数を op(b) とし、op が固定パラメータと可変パラメータの閉包所属・
+正規表現を保存する場合の共通の補題である。
+固定パラメータの親での所属と b<ψκ(op(b)) から、
+有限の開始位置以降で op(f(n)) の正規な閉包所属を得る。
+添字 κ の所属も親での所属から導き、共終な ψ 像を構成する。
+
+和 p+b と I(r,b) について、b<κ、親の正規性と添字所属から必要な条件を導ける。
+b の共終数が ω で正規基本列が既知なら、引数全体が κ 以上でも適用できる。
+`C_normal_sum_head` は主項の繰り返しを許す正規な和から先頭項の所属を回収し、
+和の尾部全体が先頭の主項より小さいという追加条件を不要にする。
+`hasNormalSequence_sum_argument` と `hasNormalSequence_I_argument` が
+尾部の既知の列を最小長の正規基本列へ統合する。
+
+## 正規形で表せる補間段階
+
+`NormalStageInterpolation.lean` の `normal_limit_collapse_interpolation` は、
+正則添字 κ、極限 a、正規項の値 x<ψκa に対して、
+正規形で表せる c<a で x<ψκc となるものを構成する。
+x は有限正規項で表せる値に限定される。任意の順序数 x についての主張ではない。
+ψ 部分項の添字が自身の閉包に属さない場合には、
+`smaller_of_index_not_mem` の値と正規性を保つ帰着を使う。
+
+`proper_index_mem_at_represented_stage` は、親の添字所属から
+κ∈C(c,ψκc) となる正規な c<a の存在を証明する。
+`proper_regular_below_normalFundamentalSequence` は、a=R が非可算正則、R<κ のとき、
+恒等列の正規な尾部 c+i に ψκ を適用して R 長の正規基本列を得る。
+既存の共終数の等式により、この長さは最小である。
+
+`hasNormalSequence_proper_regular_argument` は、この場合と κ≤R の対角列を統合する。
+親の添字所属を満たす非可算正則引数はすべて扱う。
+一般の非可算長の基本列 f では、正規な c<a があっても
+c<f(i) を満たす正規な添字 i を選ぶ問題が残り、この補間だけで解決したとはしない。
+
+## 正規な添字でも共終になる基本列
+
+`IndexStageInterpolation.lean` の `normal_limit_index_interpolation` は、
+正規形で表せる rank r と極限 a について、正規値 x<I(r,a) を
+正規形で表せる c<a における I(r,c) で上回れることを証明する。
+`NormalSequenceCoverage.lean` の `normal_suffix_represented` は、
+正規項の値 x=p+y なら y も正規形で表せることを証明する。
+p 自身の正規表現は要求しない。これから和の極限でも同様の補間を得る。
+
+`CoveringFundamentalSequence` は `NormalFundamentalSequence` の条件に、
+
+```
+x が正規形で表せる ∧ x<a
+  → ∃ i, i が正規形で表せる ∧ i<length ∧ x<f(i)
+```
+
+を加えた仕様である。出力の正規性だけからこの条件を仮定していない。
+すべての ω 長の正規基本列と正則基数の恒等列でこの条件を証明した。
+加法・I・ψ の極限操作と、正規な開始位置での尾部もこの性質を保存する。
+ψ の保存則では、意味論上の基本列に必要な添字・引数の閉包条件は維持する。
+
+`proper_limit_below_coveringFundamentalSequence` は、正規な親 ψκa、a<κ、
+親での添字所属、引数のこの強い基本列から、正規な開始添字を導き、
+ψκa に同じ長さの強い基本列を与える。親から正規な段階 d<a を得た後、
+追加の共終性で d<f(c) となる正規な添字 c を選ぶ。
+長さが加法的主項であることを仮定し、共終数を長さとする場合には自動的に成立する。
+非可算長にも適用でき、添字パラメータが cf(a) 未満という制限は不要である。
+
+`HasCoveringSequence` はこの強い列の最小長と、その長さの正規表現を要求する。
+`hasCoveringSequence_proper_limit_below` は引数のこの帰納条件を親へ移す。
+`CoveringSequenceTerm` は、既知の可算共終数の枝、正則基数、正則引数の崩壊、
+加法・I・添字未満の極限崩壊の入れ子を統合し、各項で強い条件が成立すると証明する。
+これはすべての `SequenceTerm` や `IsNormal` を覆うとの主張ではない。
+特に極限 rank の零・後続崩壊などで強い条件を引き継ぐ証明は、引き続き必要である。
+弱い仕様から選んだ既存の `minimalSequence` に、この追加条件を自動的には適用しない。
+
 ## 証明済みの枝の統合
 
 `SequenceAssembly.lean` の `SequenceTerm` は、加法・I・証明済みの ψ の枝を
@@ -399,6 +490,9 @@ I(r,succ b) の零・後続引数を加える。`successorIndex` は零引数で
 `zeroCollapse` は添字内の I 部分項の rank についての列を受け取り、
 元の添字の閉包所属を要求せずに零引数を処理する。
 `SequenceTerm.normalizedCollapse` は、閉包所属を満たす表示で証明した列を元の項へ移す。
+`regularArgument` は親の添字所属を満たすすべての非可算正則引数を扱う。
+`countableSumArgument` と `countableIndexArgument` は、添字未満で共終数 ω の
+既知の尾部から複合引数の枝を構成する。
 
 `SequenceTerm.minimal_normal_sequence` は、この族の任意の極限項について、
 実際の共終数を添字長とする正規基本列の存在と、添字長の正規表現を証明する。
@@ -408,9 +502,12 @@ I(r,succ b) の零・後続引数を加える。`successorIndex` は零引数で
 共終数が ω の場合、`SequenceTerm.revised_fundamentalSequence` が ω 長（自然数添字）の従来の修正展開へ戻す。
 
 未処理の ψ の枝を仮定として済ませたり、`IsNormal` の定義をこの族に縮小したりしていない。
-添字所属の欠ける表示と零・後続引数の帰納段階は処理済みである。
-既知の条件で正規な尾部を選べない非可算共終数の極限枝、
-添字以上の極限引数など、`ProperLimitStep` の一般の証明が残る。
+添字所属の欠ける表示、零・後続引数、非可算正則引数の帰納段階は処理済みである。
+`properRemainingLimitStep_iff_all_normal` は、全体の定理を非可算正則ではない
+極限引数の帰納段階 `ProperRemainingLimitStep` に帰着する。
+正規な添字での共終性を持つ列では、添字未満の極限枝の尾部選択は処理済みである。
+この強い帰納条件を残る枝にも証明することや、添字以上の残る極限引数などが未完了である。
+この帰着先の命題自体を証明済みとしたり、公理として追加したりしていない。
 
 任意の正規な親について `NormalFundamentalSequence` を構成する定理は未完了である。
 この仕様の導入や任意順序数の `intrinsicSequence_spec` を、その正規形保存の証明と
