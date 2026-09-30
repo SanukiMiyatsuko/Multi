@@ -1,4 +1,4 @@
-import Multi.term3.Denis.LimitRankSequences
+import Multi.term3.Denis.TransfiniteTails
 
 /-! Assemble minimal-length normal fundamental sequences. These lemmas
 retain both the actual ordinal cofinality and representability of the
@@ -157,6 +157,115 @@ theorem hasNormalSequence_first_index_collapse (s : OCF.Denis.Supply) (r a : OCF
         exact OCF.Denis.C_seed s _ _ _ (OCF.Denis.psi_argument_normal_below s _ a (f i)
           (hbound halim) harg (hf.fundamental.below i hi))
 
+theorem hasNormalSequence_successor_index_zero (s : OCF.Denis.Supply) (r b : OCF.Denis.O)
+    (hr : Represented s r) (hb : Represented s b) (hrseq : HasNormalSequence s r)
+    (hmem : OCF.Denis.C s 0 (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) 0) (OCF.Denis.I s r (succ b))) :
+    HasNormalSequence s (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) 0) := by
+  classical
+  by_cases hz : r = 0
+  · subst r
+    exact hasNormalSequence_of_dense s _ (rank_zero_successor_index_zero_dense s b hb hmem)
+  by_cases hs : ∃ q, r = succ q
+  · obtain ⟨q, rfl⟩ := hs
+    exact hasNormalSequence_of_dense s _ (successor_rank_successor_index_zero_dense s q b
+      (represented_predecessor s q hr) hb hmem)
+  · have hrlim : OCF.Denis.IsLimit r := ⟨hz, hs⟩
+    obtain ⟨hlen, f, hf⟩ := hrseq hrlim
+    exact hasNormalSequence_of_minimal s _ r hrlim hlen _
+      (limit_rank_successor_index_zero_normalFundamentalSequence s r b _ hr hb hmem
+        (OCF.Ordinal.lt_of_lt_of_le (OCF.Denis.finite_lt_omega 0) (OCF.Denis.omega_le_cofinality r hrlim)) f hf)
+
+theorem hasNormalSequence_successor_index_succ (s : OCF.Denis.Supply) (r b a : OCF.Denis.O)
+    (hr : Represented s r) (hb : Represented s b) (ha : Represented s (succ a))
+    (hrseq : HasNormalSequence s r)
+    (hmem : OCF.Denis.C s (succ a) (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) (succ a))
+      (OCF.Denis.I s r (succ b)))
+    (harg : OCF.Denis.C s (succ a) (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) (succ a)) (succ a)) :
+    HasNormalSequence s (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) (succ a)) := by
+  classical
+  have haRep := represented_predecessor s a ha
+  have haC := OCF.Denis.psi_predecessor_argument_normal_general s _ a harg
+  by_cases hz : r = 0
+  · subst r
+    exact hasNormalSequence_of_dense s _ (rank_zero_successor_index_succ_dense s b a hb haRep hmem haC)
+  by_cases hs : ∃ q, r = succ q
+  · obtain ⟨q, rfl⟩ := hs
+    exact hasNormalSequence_of_dense s _ (successor_rank_successor_index_succ_dense s q b a
+      (represented_predecessor s q hr) hb haRep hmem haC)
+  · have hrlim : OCF.Denis.IsLimit r := ⟨hz, hs⟩
+    obtain ⟨hlen, f, hf⟩ := hrseq hrlim
+    exact hasNormalSequence_of_minimal s _ r hrlim hlen _
+      (limit_rank_successor_index_succ_normalFundamentalSequence s r b a _ hr hb haRep hmem haC
+        (OCF.Ordinal.lt_of_lt_of_le (OCF.Denis.finite_lt_omega 0) (OCF.Denis.omega_le_cofinality r hrlim)) f hf)
+
+/-- Once the index belongs to its zero-argument closure, it belongs
+at every later argument. This covers zero, arbitrary successors, and
+normal limits below the index, with no extra premise on approximants. -/
+theorem hasNormalSequence_successor_index_collapse (s : OCF.Denis.Supply) (r b a : OCF.Denis.O)
+    (hr : Represented s r) (hb : Represented s b) (ha : Represented s a)
+    (hrseq : HasNormalSequence s r) (haseq : HasNormalSequence s a)
+    (hmem : OCF.Denis.C s 0 (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) 0) (OCF.Denis.I s r (succ b)))
+    (harg : OCF.Denis.C s a (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) a) a)
+    (hbound : OCF.Denis.IsLimit a → a < OCF.Denis.I s r (succ b)) :
+    HasNormalSequence s (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) a) := by
+  classical
+  have hindex (c : OCF.Denis.O) :
+      OCF.Denis.C s c (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) c) (OCF.Denis.I s r (succ b)) :=
+    OCF.Denis.C_mono_seed s _ _ _ (OCF.Denis.psi_mono s _ 0 c (zero_le c)) _
+      (OCF.Denis.C_mono_argument s 0 c _ (zero_le c) _ hmem)
+  by_cases hz : a = 0
+  · subst a
+    exact hasNormalSequence_successor_index_zero s r b hr hb hrseq hmem
+  by_cases hs : ∃ c, a = succ c
+  · obtain ⟨c, rfl⟩ := hs
+    exact hasNormalSequence_successor_index_succ s r b c hr hb ha hrseq (hindex _) harg
+  · have halim : OCF.Denis.IsLimit a := ⟨hz, hs⟩
+    obtain ⟨hlen, f, hf⟩ := haseq halim
+    apply hasNormalSequence_of_minimal s _ a halim hlen _
+    apply psi_normalFundamentalSequence s _ a _
+      (represented_I s r (succ b) hr (represented_succ s b hb)) (Or.inr ⟨r, b, rfl⟩)
+      (OCF.Ordinal.lt_of_lt_of_le (OCF.Denis.finite_lt_omega 0) (OCF.Denis.omega_le_cofinality a halim)) f hf
+    · exact fun i _ => hindex (f i)
+    · intro i hi
+      exact OCF.Denis.C_seed s _ _ _ (OCF.Denis.psi_argument_normal_below s _ a (f i)
+        (hbound halim) harg (hf.fundamental.below i hi))
+
+theorem hasNormalSequence_successor_index_small_parameter (s : OCF.Denis.Supply) (r b a : OCF.Denis.O)
+    (hr : Represented s r) (hb : Represented s b) (ha : Represented s a)
+    (hrseq : HasNormalSequence s r) (haseq : HasNormalSequence s a)
+    (hbsmall : b < OCF.Denis.I s 0 0)
+    (harg : OCF.Denis.C s a (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) a) a)
+    (hbound : OCF.Denis.IsLimit a → a < OCF.Denis.I s r (succ b)) :
+    HasNormalSequence s (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) a) := by
+  have hrank : OCF.Denis.RankBounded s r := by
+    obtain ⟨rt, hrt, rfl⟩ := hr
+    exact normal_rankBounded s rt hrt
+  exact hasNormalSequence_successor_index_collapse s r b a hr hb ha hrseq haseq
+    (OCF.Denis.C_successor_index_of_small_parameter s r b 0 hrank hbsmall) harg hbound
+
+theorem hasNormalSequence_countable_limit_collapse (s : OCF.Denis.Supply) (k a : OCF.Denis.O)
+    (hk : OCF.Denis.RegularIndex s k) (hkRep : Represented s k) (ha : OCF.Denis.IsLimit a)
+    (hseq : HasNormalSequence s a) (hcof : OCF.Denis.cofinality a ha = OCF.Denis.omega)
+    (hbound : a < k) (hindex : OCF.Denis.C s a (OCF.Denis.psi s k a) k)
+    (harg : OCF.Denis.C s a (OCF.Denis.psi s k a) a) :
+    HasNormalSequence s (OCF.Denis.psi s k a) := by
+  obtain ⟨_, f, hf⟩ := hseq ha
+  rw [hcof] at hf
+  exact hasNormalSequence_of_dense s _
+    (psi_normal_countable_limit_dense s k a hk hkRep ha hf.omega_dense hbound hindex harg)
+
+theorem hasNormalSequence_successor_index_limit_tail (s : OCF.Denis.Supply) (r b a : OCF.Denis.O)
+    (hr : Represented s r) (hb : Represented s b) (ha : OCF.Denis.IsLimit a)
+    (hseq : HasNormalSequence s a) (hbl : b < OCF.Denis.cofinality a ha)
+    (hbound : a < OCF.Denis.I s r (succ b))
+    (harg : OCF.Denis.C s a (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) a) a) :
+    HasNormalSequence s (OCF.Denis.psi s (OCF.Denis.I s r (succ b)) a) := by
+  obtain ⟨hlen, f, hf⟩ := hseq ha
+  exact hasNormalSequence_of_minimal s _ a ha hlen _
+    (successor_index_limit_tail_normalFundamentalSequence s r b a _ hr hb
+      (OCF.Ordinal.lt_of_lt_of_le (OCF.Denis.finite_lt_omega 0) (OCF.Denis.omega_le_cofinality a ha))
+      (OCF.Denis.cofinality_addPrincipal a ha) hbl f hf hbound harg)
+
 /-- A syntactic family whose branches have all been proved. Fixed
 summands and ranks may be arbitrary normal terms. Collapse indices can
 be any normal presentation with the stated canonical ordinal value. -/
@@ -175,12 +284,54 @@ inductive SequenceTerm (s : OCF.Denis.Supply) : Term → Prop where
   | firstIndex {k a r : Term} : SequenceTerm s r → SequenceTerm s a → IsNormal s (.psi k a) →
       denote s k = OCF.Denis.I s (denote s r) 0 →
       (OCF.Denis.IsLimit (denote s a) → denote s a < denote s k) → SequenceTerm s (.psi k a)
+  | successorIndexZero {k a r b : Term} : SequenceTerm s r → IsNormal s b → IsNormal s (.psi k a) →
+      denote s k = OCF.Denis.I s (denote s r) (succ (denote s b)) → denote s a = 0 →
+      OCF.Denis.C s 0 (OCF.Denis.psi s (denote s k) 0) (denote s k) → SequenceTerm s (.psi k a)
+  | successorIndexSucc {k a r b : Term} : SequenceTerm s r → IsNormal s b → IsNormal s (.psi k a) →
+      denote s k = OCF.Denis.I s (denote s r) (succ (denote s b)) → (∃ c, denote s a = succ c) →
+      OCF.Denis.C s (denote s a) (OCF.Denis.psi s (denote s k) (denote s a)) (denote s k) →
+      SequenceTerm s (.psi k a)
+  | successorIndex {k a r b : Term} : SequenceTerm s r → SequenceTerm s a → IsNormal s b →
+      IsNormal s (.psi k a) → denote s k = OCF.Denis.I s (denote s r) (succ (denote s b)) →
+      OCF.Denis.C s 0 (OCF.Denis.psi s (denote s k) 0) (denote s k) →
+      (OCF.Denis.IsLimit (denote s a) → denote s a < denote s k) → SequenceTerm s (.psi k a)
+  | countableLimit {k a : Term} : SequenceTerm s a → IsNormal s (.psi k a) →
+      (ha : OCF.Denis.IsLimit (denote s a)) → OCF.Denis.cofinality (denote s a) ha = OCF.Denis.omega →
+      denote s a < denote s k →
+      OCF.Denis.C s (denote s a) (OCF.Denis.psi s (denote s k) (denote s a)) (denote s k) →
+      SequenceTerm s (.psi k a)
+  | successorIndexLimitTail {k a r b : Term} : SequenceTerm s a → IsNormal s r → IsNormal s b →
+      IsNormal s (.psi k a) → denote s k = OCF.Denis.I s (denote s r) (succ (denote s b)) →
+      (ha : OCF.Denis.IsLimit (denote s a)) → denote s b < OCF.Denis.cofinality (denote s a) ha →
+      denote s a < denote s k → SequenceTerm s (.psi k a)
   | diagonal {k t : Term} : CollapseTree s t → IsNormal s (.psi k t) →
       denote s k = OCF.Denis.I s 0 0 → OCF.Denis.RegularIndex s (denote s t) → SequenceTerm s (.psi k t)
   | equalValue {t u : Term} : SequenceTerm s u → IsNormal s t → denote s t = denote s u → SequenceTerm s t
 
 theorem SequenceTerm.normal {s : OCF.Denis.Supply} {t : Term} (ht : SequenceTerm s t) : IsNormal s t := by
   cases ht <;> assumption
+
+theorem SequenceTerm.successorIndexSmallParameter {s : OCF.Denis.Supply} {k a r b : Term}
+    (hr : SequenceTerm s r) (ha : SequenceTerm s a) (hb : IsNormal s b) (hn : IsNormal s (.psi k a))
+    (heq : denote s k = OCF.Denis.I s (denote s r) (succ (denote s b)))
+    (hbsmall : denote s b < OCF.Denis.I s 0 0)
+    (hbound : OCF.Denis.IsLimit (denote s a) → denote s a < denote s k) : SequenceTerm s (.psi k a) := by
+  apply SequenceTerm.successorIndex hr ha hb hn heq
+  · rw [heq]
+    exact OCF.Denis.C_successor_index_of_small_parameter s _ _ 0
+      (normal_rankBounded s r hr.normal) hbsmall
+  · exact hbound
+
+theorem SequenceTerm.successorIndexParameterLeRank {s : OCF.Denis.Supply} {k a r b : Term}
+    (hr : SequenceTerm s r) (ha : SequenceTerm s a) (hb : IsNormal s b) (hn : IsNormal s (.psi k a))
+    (heq : denote s k = OCF.Denis.I s (denote s r) (succ (denote s b)))
+    (hbr : denote s b ≤ denote s r)
+    (hbound : OCF.Denis.IsLimit (denote s a) → denote s a < denote s k) : SequenceTerm s (.psi k a) := by
+  apply SequenceTerm.successorIndex hr ha hb hn heq
+  · rw [heq]
+    exact OCF.Denis.C_successor_index_of_parameter_le_rank s _ _ 0
+      (normal_rankBounded s r hr.normal) hbr
+  · exact hbound
 
 theorem SequenceTerm.hasNormalSequence {s : OCF.Denis.Supply} {t : Term} (ht : SequenceTerm s t) :
     HasNormalSequence s (denote s t) := by
@@ -218,6 +369,38 @@ theorem SequenceTerm.hasNormalSequence {s : OCF.Denis.Supply} {t : Term} (ht : S
       change HasNormalSequence s (OCF.Denis.psi s (denote s k) (denote s a))
       rw [heq] at harg hbound ⊢
       exact hasNormalSequence_first_index_collapse s _ _ ⟨r, hr.normal, rfl⟩ ⟨a, ha, rfl⟩ ihr iha harg hbound
+  | @successorIndexZero k a r b hr hb hn heq haz hmem ihr =>
+    change HasNormalSequence s (OCF.Denis.psi s (denote s k) (denote s a))
+    rw [heq] at hmem
+    rw [heq, haz]
+    exact hasNormalSequence_successor_index_zero s _ _ ⟨r, hr.normal, rfl⟩ ⟨b, hb, rfl⟩ ihr hmem
+  | @successorIndexSucc k a r b hr hb hn heq has hmem ihr =>
+    cases hn with
+    | collapse hk ha hreg harg =>
+      obtain ⟨c, hc⟩ := has
+      change HasNormalSequence s (OCF.Denis.psi s (denote s k) (denote s a))
+      rw [heq, hc] at harg hmem ⊢
+      exact hasNormalSequence_successor_index_succ s _ _ c ⟨r, hr.normal, rfl⟩ ⟨b, hb, rfl⟩
+        ⟨a, ha, hc⟩ ihr hmem harg
+  | @successorIndex k a r b hr ha hb hn heq hmem hbound ihr iha =>
+    cases hn with
+    | collapse hk haN hreg harg =>
+      change HasNormalSequence s (OCF.Denis.psi s (denote s k) (denote s a))
+      rw [heq] at harg hmem hbound ⊢
+      exact hasNormalSequence_successor_index_collapse s _ _ _ ⟨r, hr.normal, rfl⟩ ⟨b, hb, rfl⟩
+        ⟨a, haN, rfl⟩ ihr iha hmem harg hbound
+  | @countableLimit k a ha hn halim hcof hbound hindex ih =>
+    cases hn with
+    | collapse hk ha hreg harg =>
+      exact hasNormalSequence_countable_limit_collapse s _ _ hreg ⟨k, hk, rfl⟩ halim
+        ih hcof hbound hindex harg
+  | @successorIndexLimitTail k a r b ha hr hb hn heq halim hbl hbound ih =>
+    cases hn with
+    | collapse hk ha hreg harg =>
+      change HasNormalSequence s (OCF.Denis.psi s (denote s k) (denote s a))
+      rw [heq] at harg hbound ⊢
+      exact hasNormalSequence_successor_index_limit_tail s _ _ _ ⟨r, hr, rfl⟩ ⟨b, hb, rfl⟩
+        halim ih hbl hbound harg
   | @diagonal k t ht hn heq hreg =>
     cases hn with
     | collapse hk htN _ harg =>

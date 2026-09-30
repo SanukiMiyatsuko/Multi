@@ -80,7 +80,7 @@
 
 `RevisedDomains.lean` の `NormalFundamentalSequence` は、すべての順序数添字で
 降下・増加・共終性を要求し、正規形で表せる添字では出力にも正規形を要求する。
-可算の場合には全添字が有限順序数なので、これは各項が正規形であることを意味する。
+添字長が ω の場合には全添字が有限順序数なので、これは各項が正規形であることを意味する。
 非可算正則基数の恒等列にも同じ仕様が適用できる。
 修正可算列と恒等列の実装、加法・I・条件付き ψ による仕様の保存が証明済みである。
 
@@ -235,22 +235,96 @@ r の正規基本列 f を用いれば、それぞれ I(f(i),0)、I(f(i),succ(ψ
 `not_dense_uncountable_rank_zero` により、この値を自然数添字の修正列で共終に
 近似することはできない。正規値全体への有限展開の到達性とは区別する。
 
+## 後続添字の零引数
+
+`SuccessorIndexSequences.lean` は κ=I(r,succ b)、ρ=I(r,b) とし、
+κ∈C(0,ψκ0) の場合の基本列を証明する。
+
+| rank | ψκ0 に共終な列 | 定理 |
+|---|---|---|
+| r=0 | ρ の有限和 | `rank_zero_successor_index_zero_fundamentalSequence` |
+| r=q+1 | succ ρ から I(q,·) を反復 | `successor_rank_successor_index_zero_fundamentalSequence` |
+| 極限 r | r の基本列 f を I(f(i),succ ρ) に写す | `limit_rank_successor_index_zero_transfiniteFundamentalSequence` |
+
+パラメータが正規形で表せる場合、前二者は `DenseBelow` を満たし、
+極限 rank の列は `limit_rank_successor_index_zero_normalFundamentalSequence` により
+r の基本列の正規形保存と最小長を引き継ぐ。
+`hasNormalSequence_successor_index_zero` がこれらの枝を統合する。
+
+添字の閉包所属は `C_successor_index_iff` により ρ<ψκa と同値である。
+`C_successor_index_of_small_parameters` は r,b<I(0,0) のとき、任意の引数 a で
+この所属を導く。正規な引数という条件だけで添字の所属を仮定してはいない。
+所属がない場合は `psi_successor_index_plateau_of_not_mem` により ψρa=ψκa となる。
+ただし b が極限なら ρ は正則とは限らず、この等式だけで基本列の正当性は結論しない。
+
+## 後続添字の後続引数と添字所属の判定
+
+`SuccessorIndexArguments.lean` は同じ κ=I(r,succ b)、ρ=I(r,b) について、
+p=ψκa、u=ρ+p と置く。a∈C(a,p)、κ∈C(succ a,ψκ(succ a)) を前提として、
+次の列の上限が ψκ(succ a) に一致することを証明する。
+
+| rank | 共終な列 | 定理 |
+|---|---|---|
+| r=0 | u の有限和 | `rank_zero_successor_index_succ_fundamentalSequence` |
+| r=q+1 | succ u から I(q,·) を反復 | `successor_rank_successor_index_succ_fundamentalSequence` |
+| 極限 r | r の基本列 f を I(f(i),succ u) に写す | `limit_rank_successor_index_succ_transfiniteFundamentalSequence` |
+
+a の閉包所属は親の正規性から導かれる。κ の所属は親でのみ要求し、
+零引数や直前の崩壊での所属を仮定しない。ρ を含む開始値を使うことで、
+直前の ψ 値が ρ 以下にとどまる場合も扱う。
+`C_succ_successor_index_bound` が閉包全体の上界を証明し、
+`successorIndexBase_mem` が開始値を親の閉包内で構成する。
+
+パラメータが正規形で表せれば列の各値も正規形で表せる。
+`hasNormalSequence_successor_index_succ` が最小添字長まで統合し、
+r が零・後続なら ω、極限なら r の共終数を引き継ぐ。
+引数 a に可算性や κ 未満という制限はない。
+
+`C_successor_index_iff_parameter` は r が RankBounded のとき、
+κ∈C(a,ψκa) と b<ψκa の同値を証明する。有限正規項の rank はこの条件を満たす。
+したがって b<Ω または b≤r の場合は、任意の引数で添字所属を導ける。
+`SequenceTerm.successorIndexSmallParameter` と
+`SequenceTerm.successorIndexParameterLeRank` は、零・後続・κ 未満の極限引数の
+統合定理からこの所属仮定を除く。極限の場合の引数・rank の列は既知であることを要求する。
+
+`uncountable_rank_successor_index_zero_normalFundamentalSequence` は
+ψ(I(Ω,1),0) に対して i↦I(i,succ(I(Ω,0))) という Ω 長の正規基本列を与え、
+`uncountable_rank_successor_index_zero_cofinality` は最小長が Ω と等しいことを証明する。
+
+## 可算共終数の極限引数での所属条件の導出
+
+`NormalLimitTransfer.lean` は任意の正則添字 κ と a<κ について、
+正規形の可算基本列 f が a に共終であり、a と κ が親の閉包に属す場合を扱う。
+`psi_limit_eventual_index_mem` は C の有限性と ψ の連続性により、
+ある N 以降では κ∈C(f(n+N),ψκ(f(n+N))) が成立することを導く。
+`psi_normal_limit_shift_fundamentalSequence` は、この尾部の ψ 像の3性質を証明する。
+
+`psi_normal_countable_limit_dense` は正規形保存を加え、
+`hasNormalSequence_countable_limit_collapse` が既知の最小長 ω の正規基本列を引き継ぐ。
+零引数での添字所属を仮定する必要はない。非可算長の列では、
+尾部を取るだけで正規添字に対する出力の正規形保存が従うとはしていない。
+
 ## 証明済みの枝の統合
 
 `SequenceAssembly.lean` の `SequenceTerm` は、加法・I・証明済みの ψ の枝を
 繰り返し組み合わせる。I(r,0) の崩壊では r が零・後続・極限のすべてを扱い、
 引数も零・後続・添字未満の正規な極限を扱う。既知の対角枝と値の等しい
-別表現も含む。固定される rank や加法の左辺には必要な正規性だけを要求する。
+別表現も含む。`successorIndexZero` と `successorIndexSucc` は親の閉包に添字が属す
+I(r,succ b) の零・後続引数を加える。`successorIndex` は零引数での添字所属から
+添字未満の極限引数も扱う。`countableLimit` は親でのみ添字所属を要求する
+可算共終数の極限枝である。極限 rank を扱う構成では rank 自身の基本列も前提とする。
+それ以外の固定パラメータや加法の左辺には必要な正規性だけを要求する。
 
 `SequenceTerm.minimal_normal_sequence` は、この族の任意の極限項について、
 実際の共終数を添字長とする正規基本列の存在と、添字長の正規表現を証明する。
 `minimalSequence` は証明された列を選ぶ順序数関数であり、`minimalStepTerm` は
 その正規添字に対応する正規項を選ぶ。正規性・値の一致・親より小さいこと・
 狭義増加をそれぞれ証明する。順序数全体での共終性は `minimalSequence_spec` が与える。
-自然数長の場合、`SequenceTerm.revised_fundamentalSequence` が従来の修正展開へ戻す。
+共終数が ω の場合、`SequenceTerm.revised_fundamentalSequence` が ω 長（自然数添字）の従来の修正展開へ戻す。
 
 未処理の ψ の枝を仮定として済ませたり、`IsNormal` の定義をこの族に縮小したりしていない。
-一般の I(r,succ b) の崩壊添字や、添字以上の極限引数などが残る。
+親の閉包に添字が属さない一般の表示、零引数での添字所属を使えない
+非可算共終数の極限枝、添字以上の極限引数などが残る。
 
 任意の正規な親について `NormalFundamentalSequence` を構成する定理は未完了である。
 この仕様の導入や任意順序数の `intrinsicSequence_spec` を、その正規形保存の証明と
