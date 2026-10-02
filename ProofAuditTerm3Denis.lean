@@ -1,5 +1,6 @@
 import Lean
 import Multi.term3.Denis.SequenceAssembly
+import Multi.term3.Denis.LargeLimitStep
 
 /-! Audit the actual imported declarations, with no dependence on Term3.lean's
 unfinished theorems. Run after `lake build Multi.term3.Denis.SequenceAssembly`.

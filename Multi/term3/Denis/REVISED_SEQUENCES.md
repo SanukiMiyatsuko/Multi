@@ -52,7 +52,9 @@
 `FirstInterval.lean` の `normal_dense_below_first_diagonal` は、
 `psi (I 0 0) (I 0 0)` 以下のすべての正規な極限項で `DenseBelow` を証明する。
 `revised_normal_below_first_diagonal_fundamentalSequence` がこの区間全体での
-修正基本列の降下・狭義増加・共終性を与える。一般の可算対象での証明は未完了である。
+修正基本列の降下・狭義増加・共終性を与える。
+一般の場合は `LargeLimitStep.lean` の `normal_revised_cofinal_of_cofinality_omega` が、
+共終数 ω のすべての正規な極限項で修正展開の実際の順序数での共終性を証明する。
 また `not_dense_regular` は、非可算正則基数には自然数で列挙した有限記法項が
 共終になれないことを証明する。この場合の基本列は順序数を添字として扱う必要がある。
 正則基数の恒等基本列は `regular_fundamentalSequence` と
@@ -509,8 +511,9 @@ c=0 とすべての後続 c が固定引数の条件を満たす。
 強い条件でも処理できる。添字所属が欠ける表示は、同値な小さい正規 ψ 項への帰着で処理する。
 `normal_hasCoveringSequence_of_large_limit` と `largeLimitCoveringStep_iff_all_normal` は、
 残る帰納段階が添字以上の非可算正則ではない極限引数に限られることを証明する。
-`LargeLimitCoveringStep` はこの帰納段階を明示した未証明の命題であり、
-全体の定理が無条件に完成したことを意味しない。
+`LargeLimitCoveringStep` はこの帰納段階を明示した命題であり、
+`LargeLimitStep.lean` の `largeLimitCoveringStep_holds` で証明済みである
+（[LARGE_LIMIT_STEP.md](LARGE_LIMIT_STEP.md)）。
 
 ## 順序数長の複合引数の尾部
 
@@ -588,10 +591,10 @@ I(r,succ b) の零・後続引数を加える。`successorIndex` は零引数で
 強い帰納条件のもとでは、添字未満の極限枝の尾部選択も処理済みである。
 `largeLimitCoveringStep_iff_all_normal` は、全体の強い定理を、添字以上の
 非可算正則ではない極限引数の帰納段階 `LargeLimitCoveringStep` に帰着する。
-この残る極限引数の一般の証明が未完了である。
-この帰着先の命題自体を証明済みとしたり、公理として追加したりしていない。
+この残る極限引数は `largeLimitCoveringStep_holds` で証明した。公理は追加していない。
 
-任意の正規な親について `NormalFundamentalSequence` を構成する定理は未完了である。
+任意の正規な親について、最小長の `NormalFundamentalSequence` の存在は
+`normal_hasNormalSequence`（被覆列としては `normal_hasCoveringSequence`）で証明済みである。
 この仕様の導入や任意順序数の `intrinsicSequence_spec` を、その正規形保存の証明と
 読み替えてはならない。
 

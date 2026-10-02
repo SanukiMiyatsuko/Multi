@@ -34,13 +34,15 @@ collapsing α-weakly inaccessible cardinals* の定義である。
 - `all_normal_ordinals_reachable` は rank 塔の根の族から正規形全体を覆うことを示す。有限部分や特定の枝だけの定理ではない。
 - `NormalSuccessors.lean` は正規形の後続・前者への閉性を証明する。修正展開は後続順序数で実際の前者を返し、すべての実際の極限順序数で狭義増加する。
 
-**未完了の点:** 正規形の集合内での共終性と、元の順序数そのものでの共終性を区別する。
-後者は `DenseBelow` と同値であり、一般のすべての対象についてはまだ証明していない。
-`RevisedCofinality.lean` では ω、`psi (I 0 0) (I 0 0)`、
-`psi (I 1 0) 0`、`psi (I 0 0) (I 1 0)`、および上記反例の親について証明済みである。
+**実際の順序数での共終性:** 正規形の集合内での共終性と、元の順序数そのものでの共終性を区別する。
+後者は `DenseBelow` と同値である。`RevisedCofinality.lean` では ω、`psi (I 0 0) (I 0 0)`、
+`psi (I 1 0) 0`、`psi (I 0 0) (I 1 0)`、および上記反例の親について個別に証明した。
+現在は `LargeLimitStep.lean` の `normal_revised_cofinal_of_cofinality_omega` により、
+**共終数 ω のすべての正規な極限項**で修正展開が実際の順序数で共終である。
 非可算正則基数では `DenseBelow` が成立しないこと自体を証明しており、
 自然数添字の置換展開をそのまま順序数としての基本列だと扱ってはならない。
-正則基数の恒等基本列は既存の順序数添字の定理で扱い、全場合の統合は継続課題とする。
+非可算の共終数では、順序数添字の被覆基本列 `normal_hasCoveringSequence` が全正規項で存在する
+（[LARGE_LIMIT_STEP.md](LARGE_LIMIT_STEP.md)）。
 
 詳細な仕様と定理一覧は [REVISED_SEQUENCES.md](REVISED_SEQUENCES.md)。
 
@@ -255,7 +257,7 @@ C の有限性により、十分先のすべての項で添字の閉包所属が
 引数の大小や元の添字所属の制限なしで処理する。
 `properLimitStep_iff_all_normal` により、全正規項での基本列の存在に残る帰納段階は、
 添字所属を満たす極限引数の枝 `ProperLimitStep` であることまで証明した。
-`ProperLimitStep` 自体は未証明の命題であり、公理やインスタンスとして追加していない。
+`ProperLimitStep` 自体も、後に `LargeLimitStep.lean` の `properLimitStep_holds` で証明した。
 
 `ProperLimitCofinality.lean` は、a<κ が極限で、κ と a が自身の閉包に属すとき、
 実際の共終数について cf(ψκa)=cf(a) を証明する。
@@ -310,14 +312,16 @@ gₙ₊N が狭義増加・降下・共終性を満たすことと、各項の�
 `largeLimitCoveringStep_iff_all_normal` は、強い基本列の全体の定理を、
 添字以上の非可算正則ではない極限引数の帰納段階 `LargeLimitCoveringStep` に帰着する。
 零・後続引数、添字未満の極限引数、非可算正則引数には追加の未証明の帰納段階は残らない。
-`LargeLimitCoveringStep` 自体は未証明であり、公理や暗黙の仮定として追加していない。
+`LargeLimitCoveringStep` 自体は `LargeLimitStep.lean` の `largeLimitCoveringStep_holds` で証明済みである
+（[LARGE_LIMIT_STEP.md](LARGE_LIMIT_STEP.md)）。公理や暗黙の仮定は追加していない。
 
 `CompositeSequenceCoverage.lean` は、複合引数 op(b) の固定パラメータ p と b が
 親の崩壊値未満で正規形を持つとき、順序数長の列でも正規な開始添字を選べることを証明する。
 具体的に ψκ(I(r,b)) では、親が正規で添字所属を満たし、r,b<κ、
 b が極限で強い基本列を持つ場合に適用する。最小長は cf(b) であり、
 b の可算性も、引数全体 I(r,b)<κ も要求しない。
-これは `LargeLimitCoveringStep` の一部を処理するが、r または b が κ 以上の場合は含まない。
+これは `LargeLimitCoveringStep` の一部を処理するが、r または b が κ 以上の場合は含まない
+（一般の場合は `largeLimitCoveringStep_holds` で別の方法により処理した）。
 
 `ClosureStageApproximation.lean` の `CollapseTree.representedClosureStage` は、
 任意の正則添字 κ と極限引数 a について、親の閉包に属す `CollapseTree` の値を、
@@ -327,11 +331,11 @@ a の正則性や、対象値が κ 未満であることは要求しない。
 親の正規性・添字所属、b<κ、b の強い基本列に加え、固定パラメータ r または p が
 `CollapseTree` に属せば、r,p<κ の制限なしに長さ cf(b) の強い基本列を得る。
 `CoveringSequenceTerm.treeIndexArgument` と `treeSumArgument` がこの2枝を統合する。
-固定パラメータの一般化と b≥κ の一般の枝は依然として未証明である。
+固定パラメータの一般化と b≥κ の一般の枝も、後に `largeLimitCoveringStep_holds` で処理した。
 
 `properRemainingLimitStep_iff_all_normal` は、全体の証明に残る帰納段階を、
-非可算正則ではない極限引数に限定する。`ProperRemainingLimitStep` は
-依然として未証明の命題であり、仮定を消した全体定理ではない。
+非可算正則ではない極限引数に限定する。`ProperRemainingLimitStep` 自体も
+`properRemainingLimitStep_holds` で証明済みである。
 
 `SequenceAssembly.lean` は、これらの枝を加法・I・ψ の入れ子に統合する。
 `SequenceTerm.minimal_normal_sequence` は、このファイルで列挙した証明済みの構成から
@@ -385,9 +389,11 @@ Denis の列 `γ₀=1, γₙ₊₁=psi κ γₙ, αₙ=psi (I 0 0) γₙ` が
 
 ```powershell
 $env:ELAN_HOME = 'C:/Users/Owner/.elan'
-lake build Multi.term3.Denis.SequenceAssembly
+lake build Multi.term3.Denis.LargeLimitStep
 lake env lean ProofAuditTerm3Denis.lean
 ```
+
+最新の監査は 2050 個の宣言について `sorryAx` と新しい公理がないことを確認している。
 
 項の計算証明では propext・Quot.sound のみを許可する。
 OCF の意味論では利用者の許可に従い Classical.choice も許可する。
@@ -397,11 +403,38 @@ OCF の意味論では利用者の許可に従い Classical.choice も許可す�
 
 ## 継続する課題
 
-1. 元の OCF を維持した修正展開について、実際の順序数での共終性を一般の可算対象で証明する。正規形集合内の共終性や到達性の定理で代用しない。
-2. `LargeLimitCoveringStep`、すなわち崩壊添字以上の非可算正則ではない極限引数の帰納段階を証明する。これにより全正規項で最小長の正規基本列と正規添字での共終性が得られる。添字所属が欠ける表示、零・後続引数、添字未満の極限引数、非可算正則引数の帰納段階は強い条件でも処理済みである。和・I の複合引数は上記の条件の範囲で非可算長も処理済みである。
+1. （解決済み）元の OCF を維持した修正展開の実際の順序数での共終性。共終数 ω のすべての正規な極限項で `normal_revised_cofinal_of_cofinality_omega` により証明した。
+2. （解決済み）`LargeLimitCoveringStep`。`largeLimitCoveringStep_holds` により、全正規項で最小長の被覆基本列（正規添字での正規性と共終性を含む）が得られる（`normal_hasCoveringSequence`）。
 3. 新しい枝を構成する際には `cofinality_eq_of_minimal_length` を適用し、最小添字長を持つことまで確認する。共終数そのものと一般の長さ比較定理は証明済みである。
 4. ε₀以降の同定を証明し、直接読み替えが合わない高階の枝の写像を修正する。
 5. Term3 の正規形全体での順序保存、OT 所属、fund 互換性を証明する。
 6. 証明が通った対応だけを表に追加し、式を割り当てただけの項を同定済みにしない。
 
 研究目標全体は未完了である。有限部分だけで完了とはしない。
+
+## 一般の引数回収（証明済み）
+
+`CeilingInduction.lean` の `OCF.Denis.C_proper_collapse_parameters` により、
+proper な崩壊 ψk(b)（添字と引数がともに自身の定義閉包に属す）が C(a,β) に属し
+β ≤ ψk(b) なら、b < a かつ k, b ∈ C(a,β) となる。**引数を添字で抑える条件はない。**
+これは Jäger (1984) の (C5) にならって proper な崩壊だけを許す閉包 `PC` を定義し、
+Denis の閉包 `C` との一致 `properClosureComplete` を示すことで得た。
+`C` と `psi` の定義は変更していない。
+
+`NormalClosureStage.lean` の `normal_representedClosureStage` はこれを使い、
+`CollapseTree.representedClosureStage` を任意の正規項に一般化する。
+証明の構成と各段階の定理は [ARGUMENT_RECOVERY.md](ARGUMENT_RECOVERY.md) にまとめた。
+
+## 大きい極限段階（証明済み）
+
+`LargeLimitStep.lean` の `largeLimitCoveringStep_holds` により `LargeLimitCoveringStep` が成り立つ。
+したがって `normal_hasCoveringSequence` により、**すべての正規項**の値が
+共終数を長さとする被覆基本列を持つ。正規な添字の値は正規形で表せ、
+親未満の任意の正規値を正規な添字の項で上回る。
+以前の定式化の残りの帰納段階 `ProperLimitStep`・`ProperRemainingLimitStep` も従う。
+
+非孤立の場合は a の被覆列を ψk で移す。孤立の場合は、引数 a の項構造に沿った
+一様段階上界 `UStage` を、正規項のサイズに関する帰納法で証明する。
+この上界は閉包に依らない形で与えられる。そのため、上界が親の閉包に属すことと
+正規形で表せることが同時に得られる。
+詳細は [LARGE_LIMIT_STEP.md](LARGE_LIMIT_STEP.md)。
